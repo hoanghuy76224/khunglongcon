@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Khunglongcon · Custom Wedding Website</title>
     
-    <!-- ========================================================
-       META TAGS & OPEN GRAPH (TỐI ƯU LINK PREVIEW)
-       ======================================================== -->
     <meta name="description" content="Thiết kế web cưới theo yêu cầu. Demo trước khi quyết.">
     
-    <!-- Open Graph (Facebook, Messenger, Zalo...) -->
     <meta property="og:title" content="Khunglongcon · Custom Wedding Website">
     <meta property="og:description" content="Thiết kế web cưới theo yêu cầu. Demo trước khi quyết.">
     <meta property="og:image" content="https://khunglongcon.com/og-image.jpg">
@@ -18,15 +14,12 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="vi_VN">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Khunglongcon · Custom Wedding Website">
     <meta name="twitter:description" content="Thiết kế web cưới theo yêu cầu. Demo trước khi quyết.">
     <meta name="twitter:image" content="https://khunglongcon.com/og-image.jpg">
-    <!-- Tích hợp Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Khởi tạo cấu hình Tailwind Dark Mode & Chống nháy sáng ban đầu (Flash) -->
     <script>
         tailwind.config = {
             darkMode: 'class'
@@ -38,7 +31,6 @@
         }
     </script>
 
-    <!-- Nhúng Hệ Font chữ Sang Trọng & Tối Giản của các Luxury Brand -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -47,28 +39,21 @@
         body { font-family: 'Inter', sans-serif; }
         .font-luxury-serif { font-family: 'Cormorant Garamond', serif; }
         
-        /* Tự cấu hình thanh cuộn mượt cho khung điện thoại mô phỏng */
         .scrollbar-none::-webkit-scrollbar { display: none; }
         .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
 
-        /* ========================================================
-           HIỆU ỨNG CUỘN CHUYÊN NGHIỆP (SCROLL REVEAL EFFECTS)
-           ======================================================== */
         .scroll-reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Khi lướt tới sẽ kích hoạt class .active */
         .scroll-reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-        /* Hiệu ứng trượt từ trái sang */
         .reveal-left {
             transform: translateX(-40px);
         }
-        /* Hiệu ứng trượt từ phải sang */
         .reveal-right {
             transform: translateX(40px);
         }
@@ -79,7 +64,6 @@
 </head>
 <body class="bg-[#FAF8F5] dark:bg-[#12100E] text-[#1A1613] dark:text-[#FAF8F5] antialiased overflow-x-hidden transition-colors duration-500">
 
-    <!-- 1. HEADER (Thanh điều hướng cao cấp) -->
     <header class="sticky top-0 bg-[#FAF8F5]/80 dark:bg-[#12100E]/80 backdrop-blur-md z-50 border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="#" class="font-luxury-serif text-3xl font-semibold tracking-widest text-[#1A1613] dark:text-[#FAF8F5] flex items-center gap-2">
@@ -93,13 +77,10 @@
                 <a href="#pricing" class="hover:text-[#C5A880] transition duration-300">Bảng giá</a>
             </nav>
             <div class="flex items-center gap-4">
-                <!-- NÚT BẤM BẬT TẮT CHẾ ĐỘ SÁNG / TỐI (LIGHT/DARK MODE TOGGLE) -->
                 <button onclick="toggleDarkMode()" class="p-2 rounded-full border border-[#EAE5DC] dark:border-[#2A2420] hover:bg-[#EAE5DC]/30 dark:hover:bg-[#2A2420]/30 transition duration-300" aria-label="Toggle Dark Mode">
-                    <!-- Icon Mặt trời (Hiển thị ở chế độ Dark Mode) -->
                     <svg id="theme-sun" class="w-4 h-4 text-[#C5A880] hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.364 17.636l-.707.707M18.364 17.636l.707.707M6.364 5.364l.707-.707M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    <!-- Icon Mặt trăng (Hiển thị ở chế độ Light Mode) -->
                     <svg id="theme-moon" class="w-4 h-4 text-[#5A524C] dark:text-[#A59E96]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
@@ -112,16 +93,13 @@
         </div>
     </header>
 
-    <!-- BANNER CHÍNH SÁCH HIGHLIGHT ĐẶC BIỆT (Nhận trước trả sau - Thiết kế mảnh dẻ tinh tế) -->
     <div class="bg-[#1A1613] dark:bg-[#0C0A09] py-3 text-center px-4 relative z-10 shadow-sm border-b border-[#C5A880]/10">
         <p class="text-[10px] md:text-xs uppercase tracking-[0.25em] font-medium text-[#FAF8F5] flex items-center justify-center gap-2 flex-wrap">
             <span class="text-[#C5A880]">🛡️</span> Không nhận cọc. Nhận thiết kế trước, hài lòng hoàn toàn mới thanh toán.
         </p>
     </div>
 
-    <!-- 2. HERO SECTION (Đầu trang thanh lịch, tối giản) -->
     <section class="max-w-6xl mx-auto px-6 py-16 md:py-24 grid lg:grid-cols-12 gap-16 items-center">
-        <!-- Trượt nhẹ từ trái sang -->
         <div class="lg:col-span-7 space-y-8 scroll-reveal reveal-left">
             <span class="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.25em] font-bold text-[#AA8B56]">
                 <span>🦕</span> Dino Studio
@@ -133,7 +111,6 @@
                 Mỗi cặp đôi một thiết kế, không dùng mẫu đại trà. Xem demo chạy thật trước, ưng rồi mới chốt.
             </p>
 
-            <!-- Khung highlight cam kết đặc quyền cao cấp tối giản -->
             <div class="border-l border-[#C5A880] pl-6 py-2 space-y-2">
                 <p class="font-semibold text-[#1A1613] dark:text-[#FAF8F5] text-sm uppercase tracking-widest flex items-center gap-2">
                     Demo trước · Không rủi ro
@@ -153,9 +130,7 @@
             </div>
         </div>
 
-        <!-- Khung điện thoại tinh tế luxury - trượt từ phải sang -->
         <div id="phone-mockup-container" class="lg:col-span-5 flex flex-col items-center scroll-mt-24 scroll-reveal reveal-right">
-            <!-- Bộ điều khiển demo của 6 mẫu khác nhau (Thiết kế thanh lịch) -->
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-1 bg-[#F1ECE4] dark:bg-[#1C1816] p-1 rounded-2xl mb-6 shadow-inner max-w-sm w-full border border-transparent dark:border-[#2A2420] transition-colors duration-500">
                 <button onclick="switchAndScrollDemo('classic')" id="btn-demo-classic" class="px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 bg-white dark:bg-[#12100E] text-[#1A1613] dark:text-[#FAF8F5] shadow-sm text-center">
                     Classic
@@ -175,16 +150,16 @@
                 <button onclick="switchAndScrollDemo('baby')" id="btn-demo-baby" class="px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 text-[#5A524C] dark:text-[#A59E96] hover:text-[#C5A880] text-center">
                     Baby
                 </button>
+                <button onclick="switchAndScrollDemo('vow')" id="btn-demo-vow" class="px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 text-[#5A524C] dark:text-[#A59E96] hover:text-[#C5A880] text-center">
+                    The Vow
+                </button>
             </div>
 
-            <!-- Vỏ điện thoại mạ vàng đồng thau Obsidian cực kỳ tinh tế -->
             <div class="w-[315px] h-[600px] bg-[#100D0B] rounded-[2.8rem] shadow-[0_25px_50px_-12px_rgba(26,22,19,0.3)] dark:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.8)] border-[8px] border-[#AA8B56]/50 overflow-hidden p-2 relative">
-                <!-- Loa thoại tinh xảo -->
                 <div class="w-24 h-4 bg-[#100D0B] absolute top-0 left-1/2 transform -translate-x-1/2 rounded-b-2xl z-30 flex justify-center items-center">
                     <div class="w-8 h-0.5 bg-[#AA8B56]/40 rounded-full mb-1"></div>
                 </div>
                 
-                <!-- Ruột màn hình hiển thị tương tác thật -->
                 <div class="w-full h-full rounded-[2.2rem] overflow-hidden bg-white relative">
                     <iframe id="phone-iframe" src="https://tam-leen.pages.dev/" class="w-full h-full border-0 bg-white" scrolling="yes" style="overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; min-height: 100%;"></iframe>
                 </div>
@@ -193,22 +168,17 @@
         </div>
     </section>
 
-    <!-- 2.5. ABOUT SECTION (Thiết kế dạng Editorial Magazine cực sang trọng) -->
     <section id="about" class="py-24 bg-[#F5F2EB] dark:bg-[#181513] border-t border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
         <div class="max-w-4xl mx-auto px-6 scroll-reveal">
             <div class="bg-white dark:bg-[#1C1816] rounded-[32px] border border-[#EAE5DC] dark:border-[#2A2420] p-8 md:p-14 shadow-sm hover:shadow-md transition-colors duration-500 relative overflow-hidden">
-                <!-- Họa tiết khủng long chìm tối giản nghệ thuật -->
                 <div class="absolute -right-8 -bottom-10 text-9xl opacity-[0.02] select-none pointer-events-none font-luxury-serif text-[#1A1613] dark:text-white">🦕</div>
                 
                 <div class="flex flex-col md:flex-row gap-12 items-center">
-                    <!-- Ảnh đại diện nghệ thuật đen trắng tối giản -->
                     <div class="flex-shrink-0 w-28 h-28 md:w-36 md:h-36 bg-[#F5F2EB] dark:bg-[#12100E] text-[#AA8B56] rounded-full flex items-center justify-center text-5xl shadow-inner relative border border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                         👨‍💻
-                        <!-- Icon con trai Dino nhỏ ở góc avatar -->
                         <span class="absolute -bottom-1 -right-1 text-2xl bg-white dark:bg-[#1C1816] rounded-full p-1 border border-[#EAE5DC] dark:border-[#2A2420] shadow-sm transition-colors duration-500">🦕</span>
                     </div>
                     
-                    <!-- Lời ngỏ tự sự chân thực nâng tầm định vị -->
                     <div class="space-y-6 text-center md:text-left flex-1">
                         <span class="inline-flex items-center gap-1.5 bg-[#1A1613] dark:bg-[#C5A880] text-white dark:text-[#12100E] text-[9px] uppercase tracking-[0.2em] font-bold px-3 py-1 rounded-full transition-colors duration-500">
                             Story
@@ -225,7 +195,6 @@
                             </p>
                         </div>
                         
-                        <!-- Đặc quyền cam kết cá nhân mới của Huy -->
                         <div class="pt-6 border-t border-[#EAE5DC] dark:border-[#2A2420] text-xs md:text-sm text-[#AA8B56] font-medium leading-relaxed transition-colors duration-500">
                             <p class="flex items-start gap-2.5">
                                 <span class="text-sm text-[#C5A880]">✨</span>
@@ -238,7 +207,6 @@
         </div>
     </section>
 
-    <!-- 3. THƯ VIỆN MẪU WEBSITE (Thiết kế dạng Browser Mockup luxury mạ vàng nhạt) -->
     <section id="templates" class="bg-[#F5F2EB] dark:bg-[#181513] py-24 border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4 scroll-reveal">
@@ -247,13 +215,10 @@
                 <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Xem các mẫu web cưới ngay trong khung trình duyệt. Cuộn lướt trực tiếp để xem cấu trúc thật bên trong mỗi mẫu.</p>
             </div>
 
-            <!-- DANH SÁCH MẪU THIẾT KẾ ĐƯỢC TÁI CẤU TRÚC THÀNH LƯỚI 3 CỘT SANG TRỌNG -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                <!-- Mẫu 1 (vp-hg.netlify.app) -->
                 <div class="bg-white dark:bg-[#1C1816] rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EAE5DC] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
-                        <!-- Browser Header macOS Champagne Gold -->
                         <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
@@ -265,12 +230,10 @@
                             </div>
                             <div class="w-8"></div>
                         </div>
-                        <!-- Frame Iframe tỉ lệ ~1.4:1 (chiều cao 260px) -->
                         <div class="relative w-full h-[260px] bg-white">
                             <iframe src="https://tam-leen.pages.dev/" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
                             <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
                         </div>
-                        <!-- Info Content -->
                         <div class="p-6 space-y-2">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Bespoke Class</span>
@@ -279,7 +242,6 @@
                             <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Phong cách Châu Âu lãng mạn, album ảnh lớn. Mẫu thật của Văn Phong & Hoàng Giang.</p>
                         </div>
                     </div>
-                    <!-- CTA Buttons -->
                     <div class="p-6 pt-0 space-y-2">
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="switchAndScrollDemo('classic')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
@@ -295,10 +257,8 @@
                     </div>
                 </div>
 
-                <!-- Mẫu 2 (Mockup-04) -->
                 <div class="bg-white dark:bg-[#1C1816] rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EFEAE2] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
-                        <!-- Browser Header macOS Champagne Gold -->
                         <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
@@ -310,12 +270,10 @@
                             </div>
                             <div class="w-8"></div>
                         </div>
-                        <!-- Frame Iframe tỉ lệ ~1.4:1 (chiều cao 260px) -->
                         <div class="relative w-full h-[260px] bg-white">
                             <iframe src="https://mockup-04.netlify.app/" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
                             <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
                         </div>
-                        <!-- Info Content -->
                         <div class="p-6 space-y-2">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Bespoke Class</span>
@@ -324,7 +282,6 @@
                             <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Tối giản đương đại, tông hồng cam champagne, hiệu ứng hoa rơi.</p>
                         </div>
                     </div>
-                    <!-- CTA Buttons -->
                     <div class="p-6 pt-0 space-y-2">
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="switchAndScrollDemo('modern')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
@@ -340,10 +297,8 @@
                     </div>
                 </div>
 
-                <!-- Mẫu 3 (Mockup-02) -->
                 <div class="bg-white rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EFEAE2] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
-                        <!-- Browser Header macOS Champagne Gold -->
                         <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
@@ -355,12 +310,10 @@
                             </div>
                             <div class="w-8"></div>
                         </div>
-                        <!-- Frame Iframe tỉ lệ ~1.4:1 (chiều cao 260px) -->
                         <div class="relative w-full h-[260px] bg-white">
                             <iframe src="https://mockup-02.netlify.app/" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
                             <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
                         </div>
-                        <!-- Info Content -->
                         <div class="p-6 space-y-2">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Bespoke Class</span>
@@ -369,7 +322,6 @@
                             <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Bố cục kiểu tạp chí, tôn ảnh cưới làm trung tâm.</p>
                         </div>
                     </div>
-                    <!-- CTA Buttons -->
                     <div class="p-6 pt-0 space-y-2">
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="switchAndScrollDemo('duyenkhoi')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
@@ -385,10 +337,8 @@
                     </div>
                 </div>
 
-                <!-- Mẫu 4 (pg-wedding.netlify.app) -->
                 <div class="bg-white dark:bg-[#1C1816] rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EFEAE2] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
-                        <!-- Browser Header macOS Champagne Gold -->
                         <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
@@ -400,12 +350,10 @@
                             </div>
                             <div class="w-8"></div>
                         </div>
-                        <!-- Frame Iframe tỉ lệ ~1.4:1 (chiều cao 260px) -->
                         <div class="relative w-full h-[260px] bg-white">
                             <iframe src="https://mockup-02.pages.dev" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
                             <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
                         </div>
-                        <!-- Info Content -->
                         <div class="p-6 space-y-2">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Bespoke Class</span>
@@ -414,7 +362,6 @@
                             <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Tích hợp bản đồ và đồng hồ đếm ngược tới ngày cưới.</p>
                         </div>
                     </div>
-                    <!-- CTA Buttons -->
                     <div class="p-6 pt-0 space-y-2">
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="switchAndScrollDemo('vinhket')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
@@ -430,10 +377,8 @@
                     </div>
                 </div>
 
-                <!-- Mẫu 5 (Mockup-06) -->
                 <div class="bg-white rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EFEAE2] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
-                        <!-- Browser Header macOS Champagne Gold -->
                         <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
@@ -445,12 +390,10 @@
                             </div>
                             <div class="w-8"></div>
                         </div>
-                        <!-- Frame Iframe tỉ lệ ~1.4:1 (chiều cao 260px) -->
                         <div class="relative w-full h-[260px] bg-white">
                             <iframe src="https://mau01.khunglongcon.com/" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
                             <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
                         </div>
-                        <!-- Info Content -->
                         <div class="p-6 space-y-2">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Bespoke Class</span>
@@ -459,7 +402,6 @@
                             <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Tông màu nhẹ nhàng, bố cục mềm mại, sang trọng kín đáo.</p>
                         </div>
                     </div>
-                    <!-- CTA Buttons -->
                     <div class="p-6 pt-0 space-y-2">
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="switchAndScrollDemo('uyenuong')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
@@ -475,10 +417,8 @@
                     </div>
                 </div>
 
-                <!-- Mẫu 6 (Welcome-Dino) -->
                 <div class="bg-white rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EFEAE2] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
-                        <!-- Browser Header macOS Champagne Gold -->
                         <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
                             <div class="flex items-center gap-1.5">
                                 <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
@@ -490,12 +430,10 @@
                             </div>
                             <div class="w-8"></div>
                         </div>
-                        <!-- Frame Iframe tỉ lệ ~1.4:1 (chiều cao 260px) -->
                         <div class="relative w-full h-[260px] bg-white">
                             <iframe src="https://welcome-dino.netlify.app/#dino" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
                             <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
                         </div>
-                        <!-- Info Content -->
                         <div class="p-6 space-y-2">
                             <div class="flex items-center gap-2 flex-wrap">
                                 <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Bespoke Class</span>
@@ -504,7 +442,6 @@
                             <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Lưu lại hành trình chờ đón con, phong cách mộc mạc dịu nhẹ.</p>
                         </div>
                     </div>
-                    <!-- CTA Buttons -->
                     <div class="p-6 pt-0 space-y-2">
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="switchAndScrollDemo('baby')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
@@ -520,11 +457,50 @@
                     </div>
                 </div>
 
+                <div class="bg-white dark:bg-[#1C1816] rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EFEAE2] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
+                    <div>
+                        <div class="bg-[#FAF8F5] dark:bg-[#12100E] px-4 py-3 flex items-center justify-between border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-[#EAE5DC] dark:bg-[#2A2420] border border-[#C5A880]/30 transition-colors duration-500"></span>
+                            </div>
+                            <div class="bg-white/90 dark:bg-white/5 text-[10px] text-[#5A524C] dark:text-[#A59E96] px-6 py-0.5 rounded-full border border-[#EAE5DC] dark:border-[#2A2420] max-w-[180px] truncate font-light tracking-wider transition-colors duration-500">
+                                mau07.khunglongcon.com
+                            </div>
+                            <div class="w-8"></div>
+                        </div>
+                        <div class="relative w-full h-[260px] bg-white">
+                            <iframe src="https://mau07.khunglongcon.com/" class="absolute inset-0 w-full h-full border-0 bg-white" style="overflow-y: scroll !important; -webkit-overflow-scrolling: touch !important;"></iframe>
+                            <div class="absolute bottom-2 right-2 bg-black/60 text-white text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full z-20 pointer-events-none">Scroll Live</div>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Editorial Class</span>
+                                <h3 class="font-luxury-serif text-lg font-medium text-[#1A1613] dark:text-[#FAF8F5]">Template 7: The Vow</h3>
+                            </div>
+                            <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-2">Phong cách tạp chí thời trang, typography bản lớn, bố cục phá cách. Dành cho cặp đôi cá tính.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 space-y-2">
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="switchAndScrollDemo('vow')" class="text-center border border-[#EAE5DC] dark:border-[#2A2420] text-[#1A1613] dark:text-[#FAF8F5] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:border-[#1A1613] dark:hover:border-[#C5A880] transition flex items-center justify-center gap-1">
+                                Demo
+                            </button>
+                            <a href="https://mau07.khunglongcon.com/" target="_blank" class="text-center border border-[#C5A880] text-[#AA8B56] py-2 rounded-lg text-xs uppercase tracking-wider font-semibold hover:bg-[#C5A880]/10 transition flex items-center justify-center gap-1">
+                                Live ↗
+                            </a>
+                        </div>
+                        <button onclick="selectTemplate('Template 7: The Vow')" class="w-full text-center bg-[#1A1613] dark:bg-[#C5A880] text-white dark:text-[#12100E] py-2 rounded-lg text-xs uppercase tracking-widest font-semibold hover:bg-[#AA8B56] dark:hover:bg-[#FAF8F5] transition duration-300">
+                            Lựa chọn mẫu
+                        </button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- 4. SERVICES (Tính năng website - tối giản sang trọng) -->
     <section id="services" class="py-24 bg-white dark:bg-[#12100E] transition-colors duration-500">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4 scroll-reveal">
@@ -534,25 +510,21 @@
             </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Feature 1 -->
                 <div class="bg-[#FAF8F5] dark:bg-[#1C1816] p-8 rounded-3xl border border-[#EAE5DC] dark:border-[#2A2420] hover:border-[#AA8B56] dark:hover:border-[#C5A880] transition duration-300 scroll-reveal">
                     <div class="text-[#AA8B56] text-3xl mb-6">⌛</div>
                     <h4 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Đếm ngược tự động</h4>
                     <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Đếm ngược từng ngày tới thời khắc trọng đại của bạn.</p>
                 </div>
-                <!-- Feature 2 -->
                 <div class="bg-[#FAF8F5] dark:bg-[#1C1816] p-8 rounded-3xl border border-[#EAE5DC] dark:border-[#2A2420] hover:border-[#AA8B56] dark:hover:border-[#C5A880] transition duration-300 scroll-reveal">
                     <div class="text-[#AA8B56] text-3xl mb-6">💌</div>
                     <h4 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Lời chúc lưu niệm</h4>
                     <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Khách mời để lại lời chúc trực tiếp trên trang.</p>
                 </div>
-                <!-- Feature 3 -->
                 <div class="bg-[#FAF8F5] dark:bg-[#1C1816] p-8 rounded-3xl border border-[#EAE5DC] dark:border-[#2A2420] hover:border-[#AA8B56] dark:hover:border-[#C5A880] transition duration-300 scroll-reveal">
                     <div class="text-[#AA8B56] text-3xl mb-6">💳</div>
                     <h4 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Mã QR mừng cưới</h4>
                     <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Khách gửi quà mừng qua QR chuyển khoản gọn gàng, lịch sự.</p>
                 </div>
-                <!-- Feature 4 -->
                 <div class="bg-[#FAF8F5] dark:bg-[#1C1816] p-8 rounded-3xl border border-[#EAE5DC] dark:border-[#2A2420] hover:border-[#AA8B56] dark:hover:border-[#C5A880] transition duration-300 scroll-reveal">
                     <div class="text-[#AA8B56] text-3xl mb-6">🎵</div>
                     <h4 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Nhạc nền tự chọn</h4>
@@ -562,7 +534,6 @@
         </div>
     </section>
 
-    <!-- 5. PROCESS (Quy trình bàn giao - Trực quan, tinh tế) -->
     <section id="process" class="py-24 bg-[#F5F2EB] dark:bg-[#181513] border-t border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4 scroll-reveal">
@@ -572,19 +543,16 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
                 <div class="bg-white dark:bg-[#1C1816] p-8 rounded-[24px] border border-[#EAE5DC] dark:border-[#2A2420] relative shadow-sm scroll-reveal transition-colors duration-500">
                     <span class="absolute top-6 right-6 font-luxury-serif text-4xl text-[#EAE5DC] dark:text-[#2A2420] font-bold">01</span>
                     <h3 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Chọn mẫu & Gửi tin</h3>
                     <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Chọn mẫu bạn ưng nhất, gửi hình ảnh và thông tin qua Zalo.</p>
                 </div>
-                <!-- Step 2 -->
                 <div class="bg-white dark:bg-[#1C1816] p-8 rounded-[24px] border border-[#EAE5DC] dark:border-[#2A2420] relative shadow-sm scroll-reveal transition-colors duration-500">
                     <span class="absolute top-6 right-6 font-luxury-serif text-4xl text-[#EAE5DC] dark:text-[#2A2420] font-bold">02</span>
                     <h3 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Nhận bản Demo</h3>
                     <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Mình căn chỉnh và gửi bản chạy thử trên mạng để bạn và gia đình xem.</p>
                 </div>
-                <!-- Step 3 -->
                 <div class="bg-[#FAF8F5] dark:bg-[#12100E] p-8 rounded-[24px] border border-[#AA8B56]/40 relative shadow-sm scroll-reveal transition-colors duration-500">
                     <span class="absolute top-6 right-6 font-luxury-serif text-4xl text-[#AA8B56]/30 font-bold">03</span>
                     <h3 class="font-luxury-serif text-xl font-medium mb-3 text-[#1A1613] dark:text-[#FAF8F5]">Ưng rồi mới chốt</h3>
@@ -594,7 +562,6 @@
         </div>
     </section>
 
-    <!-- 6. PRICING (Bảng giá tối giản: Thiết kế chuẩn Luxury Boutique) -->
     <section id="pricing" class="py-24 bg-white dark:bg-[#12100E] transition-colors duration-500">
         <div class="max-w-6xl mx-auto px-6">
             <div class="text-center max-w-2xl mx-auto mb-20 space-y-4 scroll-reveal">
@@ -604,7 +571,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- GÓI THƯỜNG -->
                 <div class="bg-[#FAF8F5] dark:bg-[#1C1816] p-8 rounded-[32px] border border-[#EAE5DC] dark:border-[#2A2420] hover:border-[#C5A880] transition duration-500 flex flex-col justify-between relative scroll-reveal reveal-left">
                     <div class="space-y-6">
                         <div class="flex justify-between items-start">
@@ -631,7 +597,6 @@
                     </div>
                 </div>
 
-                <!-- GÓI TÙY BIẾN (CUSTOM ĐÃ CẬP NHẬT QUÀ TẶNG THIỆP ONLINE - GLOW LUXURY BORDER) -->
                 <div class="bg-white dark:bg-[#1C1816] p-8 rounded-[32px] border-2 border-[#C5A880] shadow-md flex flex-col justify-between relative scroll-reveal reveal-right transition-colors duration-500">
                     <div class="absolute -top-3.5 right-6 bg-[#AA8B56] text-white text-[8px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">🔥 Bestseller</div>
                     <div class="space-y-6">
@@ -660,7 +625,6 @@
                 </div>
             </div>
 
-            <!-- Cam kết đặc biệt tối giản -->
             <div class="max-w-xl mx-auto mt-14 bg-[#F5F2EB] dark:bg-[#181513] border border-[#EAE5DC] dark:border-[#2A2420] rounded-[24px] p-6 text-center shadow-sm scroll-reveal transition-colors duration-500">
                 <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light uppercase tracking-widest leading-relaxed">
                     💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%.
@@ -669,7 +633,6 @@
         </div>
     </section>
 
-    <!-- 7. ORDER FORM & LIÊN HỆ -->
     <section id="order" class="max-w-4xl mx-auto px-6 py-24">
         <div class="bg-white dark:bg-[#1C1816] rounded-[32px] border border-[#EAE5DC] dark:border-[#2A2420] shadow-sm p-8 md:p-14 grid md:grid-cols-5 gap-12 relative scroll-reveal transition-colors duration-500">
             
@@ -693,7 +656,6 @@
             </div>
             
             <div class="md:col-span-3">
-                <!-- FORM NHẬN DATA CHẠY VỀ FORMSPREE LIVE -->
                 <form id="contactForm" action="https://formspree.io/f/mojbloek" method="POST" class="space-y-5">
                     <div>
                         <label class="block text-xs uppercase tracking-widest font-semibold mb-2 text-[#1A1613] dark:text-[#FAF8F5]">Họ và tên của bạn *</label>
@@ -723,7 +685,6 @@
         </div>
     </section>
 
-    <!-- POPUP THÔNG BÁO THÀNH CÔNG -->
     <div id="successModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[100] hidden items-center justify-center p-4">
         <div class="bg-white dark:bg-[#1C1816] rounded-3xl max-w-sm w-full p-8 text-center space-y-5 shadow-2xl border border-[#EAE5DC] dark:border-[#2A2420] transform scale-95 transition-transform duration-300">
             <div class="w-16 h-16 bg-[#F5F2EB] dark:bg-[#12100E] text-[#AA8B56] text-3xl flex items-center justify-center rounded-full mx-auto">🦕</div>
@@ -737,7 +698,6 @@
         </div>
     </div>
 
-    <!-- 8. FOOTER -->
     <footer class="bg-[#1A1613] text-[#FAF8F5] py-16 text-center text-xs border-t border-[#3E3631] dark:border-[#2A2420] transition-colors duration-500">
         <div class="max-w-6xl mx-auto px-6 space-y-6">
             <p class="font-luxury-serif text-3xl font-semibold tracking-widest text-white">
@@ -749,22 +709,15 @@
         </div>
     </footer>
 
-    <!-- ========================================================
-       BOX CHAT TƯ VẤN LIVE (ZALO & MESSENGER) - BỔ SUNG MỚI
-       ======================================================== -->
-    <!-- Nút bấm bong bóng cố định ở góc dưới bên phải -->
     <div class="fixed bottom-6 right-6 z-[90] flex flex-col items-end gap-3 font-sans">
         
-        <!-- Các nút chat thành phần (Mặc định ẩn, sẽ hiện khi bấm nút chính) -->
         <div id="chat-options" class="flex flex-col items-end gap-3 hidden opacity-0 translate-y-4 transition-all duration-300">
-            <!-- Nút Messenger (Được thiết kế logo sấm sét chính chủ chuẩn SVG, kết nối trực tiếp đến m.me/oitenecommentdao) -->
             <a href="https://m.me/oitenecommentdao" target="_blank" class="flex items-center gap-2 bg-[#0084FF] text-white px-4 py-2.5 rounded-full shadow-lg hover:bg-[#0072DD] transition text-sm font-bold transform hover:-translate-y-0.5">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C6.36 2 2 6.13 2 11.21c0 2.89 1.41 5.47 3.63 7.13.19.14.3.36.3.6v2.24c0 .54.54.92 1.05.73l2.5-1.03a1.11 1.11 0 0 1 .79-.04c1.1.31 2.25.47 3.43.47 5.64 0 10-4.13 10-9.21C22 6.13 17.64 2 12 2zm1.2 12.05l-2.43-2.61a.45.45 0 0 0-.66 0l-3.33 3.33c-.23.23-.59-.04-.45-.34l3.32-5.74a.45.45 0 0 1 .66 0l2.43 2.61a.45.45 0 0 0 .66 0l3.33-3.33c.23-.23.59.04.45.34l-3.32 5.74a.45.45 0 0 1-.66 0z"/>
                 </svg>
                 <span>Messenger</span>
             </a>
-            <!-- Nút Zalo (Đã cấu hình tự động trỏ về số Zalo 0589380142 của bạn) -->
             <a href="https://zalo.me/0589380142" target="_blank" class="flex items-center gap-2 bg-[#0068FF] text-white px-4 py-2.5 rounded-full shadow-lg hover:bg-[#0052CC] transition text-sm font-bold transform hover:-translate-y-0.5">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 3c-5.5 0-10 3.58-10 8 0 1.94.85 3.73 2.27 5.09-.12.48-.38 1.48-.48 1.88a.5.5 0 0 0 .73.53c1.07-.61 2.45-1.4 2.87-1.55C8.42 17.5 10.15 18 12 18c5.5 0 10-3.58 10-8s-4.5-8-10-8zm3 10H9v-1l3.5-3.5H9V7.5h6v1L11.5 12H15V13z"/>
@@ -773,14 +726,11 @@
             </a>
         </div>
 
-        <!-- Nút bấm chính (Bật/Tắt menu chat - Tông màu măng đen luxury mạ vàng nhạt) -->
         <button onclick="toggleChatMenu()" id="btn-chat-main" class="w-14 h-14 bg-[#1A1613] text-white rounded-full flex items-center justify-center shadow-2xl hover:bg-[#AA8B56] transition-all duration-300 transform hover:scale-105 border border-[#C5A880]/30 relative group">
-            <!-- Chấm đỏ thông báo tạo tương tác khách hàng -->
             <span class="absolute top-0 right-0 flex h-3 w-3">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
             </span>
-            <!-- Icon hiển thị thay đổi linh hoạt (⚡ được thay bằng biểu tượng tin nhắn SVG) -->
             <svg id="chat-icon-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 text-[#C5A880]">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785 1.125 1.125 0 0 0 .961 1.744 8.12 8.12 0 0 0 4.312-1.12c.57-.315 1.22-.321 1.791-.012A10.158 10.158 0 0 0 12 20.25Z" />
             </svg>
@@ -788,29 +738,26 @@
         </button>
     </div>
 
-    <!-- INTERACTION SCRIPTS (JavaScript tương tác) -->
     <script>
-        // --- HIỆU ỨNG CUỘN (SCROLL REVEAL ANIMATION) ---
         document.addEventListener("DOMContentLoaded", function() {
             const revealElements = document.querySelectorAll('.scroll-reveal');
             
             const observerOptions = {
-                threshold: 0.1, // Kích hoạt khi 10% phần tử hiển thị trên màn hình
-                rootMargin: "0px 0px -50px 0px" // Kích hoạt sớm 50px trước khi cuộn hẳn đến
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
             };
 
             const revealObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('active');
-                        observer.unobserve(entry.target); // Chỉ tạo hiệu ứng một lần duy nhất khi cuộn xuống
+                        observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
 
             revealElements.forEach(el => revealObserver.observe(el));
 
-            // Setup dark/light icons state on load
             const sun = document.getElementById('theme-sun');
             const moon = document.getElementById('theme-moon');
             if (document.documentElement.classList.contains('dark')) {
@@ -822,19 +769,17 @@
             }
         });
 
-        // Hàm chuyển đổi nội dung Demo trên khung điện thoại mô phỏng (Sử dụng Iframe thật)
         function switchDemo(templateId) {
             const phoneIframe = document.getElementById('phone-iframe');
 
-            // Reset trạng thái active của các nút điều khiển trên đầu điện thoại
             const btnClassic = document.getElementById('btn-demo-classic');
             const btnModern = document.getElementById('btn-demo-modern');
             const btnDuyenKhoi = document.getElementById('btn-demo-duyenkhoi');
             const btnVinhKet = document.getElementById('btn-demo-vinhket');
             const btnUyenUong = document.getElementById('btn-demo-uyenuong');
             const btnBaby = document.getElementById('btn-demo-baby');
+            const btnVow = document.getElementById('btn-demo-vow');
 
-            // Đặt tất cả về style thường tối giản
             const normalClass = "px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 text-[#5A524C] dark:text-[#A59E96] hover:text-[#C5A880] text-center";
             btnClassic.className = normalClass;
             btnModern.className = normalClass;
@@ -842,8 +787,8 @@
             btnVinhKet.className = normalClass;
             btnUyenUong.className = normalClass;
             btnBaby.className = normalClass;
+            btnVow.className = normalClass;
 
-            // Thay đổi đường dẫn Iframe và cập nhật phong cách nút bấm active
             if (templateId === 'classic') {
                 phoneIframe.src = "https://tam-leen.pages.dev/";
                 btnClassic.className = "px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 bg-white dark:bg-[#12100E] text-[#1A1613] dark:text-[#FAF8F5] shadow-sm text-center";
@@ -854,7 +799,6 @@
                 phoneIframe.src = "https://mockup-02.netlify.app/";
                 btnDuyenKhoi.className = "px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 bg-white dark:bg-[#12100E] text-[#1A1613] dark:text-[#FAF8F5] shadow-sm text-center";
             } else if (templateId === 'vinhket') {
-                // Đã cập nhật mẫu 4 về pg-wedding.netlify.app
                 phoneIframe.src = "https://mockup-02.pages.dev";
                 btnVinhKet.className = "px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 bg-white text-[#1A1613] dark:text-[#FAF8F5] shadow-sm text-center";
             } else if (templateId === 'uyenuong') {
@@ -863,30 +807,26 @@
             } else if (templateId === 'baby') {
                 phoneIframe.src = "https://welcome-dino.netlify.app/#dino";
                 btnBaby.className = "px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 bg-white text-[#1A1613] dark:text-[#FAF8F5] shadow-sm text-center";
+            } else if (templateId === 'vow') {
+                phoneIframe.src = "https://mau07.khunglongcon.com/";
+                btnVow.className = "px-2 py-2 rounded-xl font-medium text-[9px] uppercase tracking-wider transition duration-300 bg-white text-[#1A1613] dark:text-[#FAF8F5] shadow-sm text-center";
             }
         }
 
-        // Hàm hỗ trợ khi khách bấm Xem Demo từ thẻ Kho mẫu phía dưới
         function switchAndScrollDemo(templateId) {
-            // 1. Chuyển đổi giao diện mẫu trên điện thoại
             switchDemo(templateId);
-
-            // 2. Cuộn mượt màn hình lên vị trí chiếc điện thoại để khách xem trực tiếp
             document.getElementById('phone-mockup-container').scrollIntoView({
                 behavior: 'smooth',
                 block: 'center'
             });
         }
 
-        // Hàm khi khách hàng click chọn nhanh 1 mẫu cụ thể ở kho mẫu
         function selectTemplate(templateName) {
             const messageArea = document.getElementById('form-message');
             const serviceSelect = document.getElementById('form-service');
             
-            // Điền trước thông tin mẫu vào form nhắn gửi
             messageArea.value = `Xin chào Dino Studio, mình muốn đăng ký thiết kế theo: ${templateName}. Vui lòng tư vấn cho mình nhé!`;
             
-            // Chọn đúng phân loại tương đối
             const nameLower = templateName.toLowerCase();
             if (nameLower.includes('baby') || nameLower.includes('diary') || nameLower.includes('con')) {
                 serviceSelect.value = "baby";
@@ -894,27 +834,23 @@
                 serviceSelect.value = "wedding";
             }
             
-            // Cuộn mượt màn hình xuống form đăng ký
             document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Gửi dữ liệu không đồng bộ (AJAX) tránh crash tuyệt đối trong Sandbox Iframe
         const contactForm = document.getElementById('contactForm');
         const successModal = document.getElementById('successModal');
 
         contactForm.addEventListener('submit', function(event) {
-            event.preventDefault(); // Chặn chuyển trang gây Crash
+            event.preventDefault();
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             
-            // Đổi trạng thái nút bấm tránh gửi trùng lặp
             submitBtn.disabled = true;
             submitBtn.innerHTML = "<span>⏳</span> Đang gửi thông tin...";
 
             const formData = new FormData(contactForm);
 
-            // Gửi bất đồng bộ ngầm lên Formspree thực tế của bạn
             fetch(contactForm.action, {
                 method: 'POST',
                 body: formData,
@@ -923,13 +859,11 @@
                 }
             })
             .then(response => {
-                // Hiển thị thông báo gửi thành công dễ thương của Dino
                 successModal.classList.remove('hidden');
                 successModal.classList.add('flex');
                 contactForm.reset();
             })
             .catch(error => {
-                // Đề phòng lỗi bảo mật CORS trong iframe của Canvas, chúng ta vẫn kích hoạt modal thành công cho trải nghiệm mượt mà
                 successModal.classList.remove('hidden');
                 successModal.classList.add('flex');
                 contactForm.reset();
@@ -940,13 +874,11 @@
             });
         });
 
-        // Đóng Hộp thoại thông báo thành công
         function closeSuccessModal() {
             successModal.classList.add('hidden');
             successModal.classList.remove('flex');
         }
 
-        // --- HÀM TƯƠNG TÁC BOX CHAT LIVE ---
         function toggleChatMenu() {
             const chatOptions = document.getElementById('chat-options');
             const iconOpen = document.getElementById('chat-icon-open');
@@ -954,31 +886,25 @@
             const btnMain = document.getElementById('btn-chat-main');
 
             if (chatOptions.classList.contains('hidden')) {
-                // Mở menu: Bỏ class hidden, sau đó kích hoạt hiệu ứng mờ và trượt lên
                 chatOptions.classList.remove('hidden');
                 setTimeout(() => {
                     chatOptions.classList.remove('opacity-0', 'translate-y-4');
                 }, 10);
                 
-                // Đổi icon sang dấu X
                 iconOpen.classList.add('hidden');
                 iconClose.classList.remove('hidden');
             } else {
-                // Đóng menu: Tạo hiệu ứng thu lại trước
                 chatOptions.classList.add('opacity-0', 'translate-y-4');
                 
-                // Chờ hiệu ứng chuyển động hoàn tất rồi mới thêm lại 'hidden'
                 setTimeout(() => {
                     chatOptions.classList.add('hidden');
                 }, 300);
 
-                // Đổi icon quay về ban đầu
                 iconOpen.classList.remove('hidden');
                 iconClose.classList.add('hidden');
             }
         }
 
-        // --- HÀM BẬT TẮT CHẾ ĐỘ SÁNG / TỐI ---
         function toggleDarkMode() {
             const html = document.documentElement;
             const sun = document.getElementById('theme-sun');
