@@ -178,48 +178,50 @@
                      style="box-shadow: 0 30px 60px -15px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(170,139,86,0.3), 0 0 0 1px rgba(0,0,0,0.8);">
 
                     <!-- Screen content -->
-                    <div class="w-full h-full relative bg-white overflow-hidden">
-                        <iframe id="phone-iframe" src="https://tam-leen.pages.dev/" class="absolute inset-0 w-full h-full border-0 bg-white" scrolling="yes" style="overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; min-height: 100%;"></iframe>
+                    <div class="w-full h-full flex flex-col bg-black overflow-hidden">
 
-                        <!-- Status bar overlay (on top of iframe) -->
-                        <div class="absolute top-0 left-0 right-0 h-[50px] z-20 flex items-end pb-1 px-5 justify-between pointer-events-none"
-                             style="background: linear-gradient(to bottom, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.2) 70%, transparent 100%);">
-                            <span id="phone-clock" class="text-white text-[13px] font-semibold" style="text-shadow:0 1px 3px rgba(0,0,0,0.8);">9:41</span>
-                            <div class="flex items-center gap-[5px]">
-                                <!-- Signal -->
-                                <div class="flex items-end gap-[2px]">
-                                    <div class="w-[3px] h-[4px] bg-white rounded-[1px] opacity-90"></div>
-                                    <div class="w-[3px] h-[6px] bg-white rounded-[1px] opacity-90"></div>
-                                    <div class="w-[3px] h-[8px] bg-white rounded-[1px] opacity-90"></div>
-                                    <div class="w-[3px] h-[10px] bg-white rounded-[1px] opacity-90"></div>
+                        <!-- Status bar (black, chứa Dynamic Island) -->
+                        <div class="w-full flex-shrink-0 bg-black flex items-center justify-between px-5 relative" style="height:54px;">
+                            <span id="phone-clock" class="text-white text-[13px] font-semibold z-10">9:41</span>
+                            <!-- Dynamic Island -->
+                            <div class="absolute left-1/2 -translate-x-1/2 top-[10px] bg-black rounded-full flex items-center justify-center gap-[7px] z-20"
+                                 style="width:120px; height:34px; box-shadow: 0 0 0 1.5px #2a2a2a;">
+                                <div class="w-[11px] h-[11px] rounded-full bg-[#111] border border-[#252525] flex items-center justify-center">
+                                    <div class="w-[4px] h-[4px] rounded-full bg-[#1c1c2e] opacity-70"></div>
                                 </div>
-                                <!-- Wifi -->
+                                <div class="w-[5px] h-[5px] rounded-full bg-[#181818] border border-[#222]"></div>
+                            </div>
+                            <!-- Icons -->
+                            <div class="flex items-center gap-[5px] z-10">
+                                <div class="flex items-end gap-[2px]">
+                                    <div class="w-[3px] h-[4px] bg-white rounded-[1px]"></div>
+                                    <div class="w-[3px] h-[6px] bg-white rounded-[1px]"></div>
+                                    <div class="w-[3px] h-[8px] bg-white rounded-[1px]"></div>
+                                    <div class="w-[3px] h-[10px] bg-white rounded-[1px]"></div>
+                                </div>
                                 <svg width="15" height="11" viewBox="0 0 15 11" fill="none">
                                     <path d="M7.5 8.5a1.5 1.5 0 110 3 1.5 1.5 0 010-3z" fill="white"/>
                                     <path d="M2.5 5.5C3.9 4.1 5.6 3.3 7.5 3.3s3.6.8 5 2.2" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                                     <path d="M0 3C1.9 1.1 4.6 0 7.5 0S13.1 1.1 15 3" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
                                 </svg>
-                                <!-- Battery -->
                                 <div class="flex items-center gap-[1px]">
-                                    <div class="w-[22px] h-[11px] rounded-[2.5px] border border-white/90 p-[1.5px] flex items-center">
+                                    <div class="w-[22px] h-[11px] rounded-[2.5px] border border-white/80 p-[1.5px] flex items-center">
                                         <div class="h-full bg-white rounded-[1px]" style="width:80%"></div>
                                     </div>
-                                    <div class="w-[2px] h-[5px] bg-white/70 rounded-r-full"></div>
+                                    <div class="w-[2px] h-[5px] bg-white/60 rounded-r-full"></div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Dynamic Island -->
-                        <div class="absolute top-[10px] left-1/2 -translate-x-1/2 z-30 bg-black rounded-full flex items-center justify-center gap-[7px]"
-                             style="width:120px; height:34px; box-shadow: 0 0 0 1px rgba(255,255,255,0.06);">
-                            <div class="w-[12px] h-[12px] rounded-full bg-[#0a0a0a] border border-[#1f1f1f] flex items-center justify-center">
-                                <div class="w-[5px] h-[5px] rounded-full bg-[#1a1a2e] opacity-80"></div>
-                            </div>
-                            <div class="w-[6px] h-[6px] rounded-full bg-[#111] border border-[#222]"></div>
+                        <!-- Iframe area -->
+                        <div class="flex-1 relative overflow-hidden bg-white">
+                            <iframe id="phone-iframe" src="https://tam-leen.pages.dev/" class="absolute inset-0 w-full h-full border-0 bg-white" scrolling="yes" style="overflow-y: auto !important; -webkit-overflow-scrolling: touch !important; min-height: 100%;"></iframe>
                         </div>
 
                         <!-- Home indicator -->
-                        <div class="absolute bottom-2 left-1/2 -translate-x-1/2 z-20 w-28 h-[5px] bg-black/30 rounded-full"></div>
+                        <div class="w-full bg-white flex justify-center items-center flex-shrink-0" style="height:22px;">
+                            <div class="w-28 h-[5px] bg-black/20 rounded-full"></div>
+                        </div>
                     </div>
                 </div>
             </div>
