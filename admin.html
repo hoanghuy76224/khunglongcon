@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Dino Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:#1A1613; --bg:#F5F2EB; --surface:#FFFFFF; --line:#E3DCCF; --text:#1A1613; --sub:#6B6259;
+  --gold:#8F7240; --gold-soft:#F1E8D8; --danger:#B3261E; --ok:#2E6B3E; --rail:#1A1613; --rail-text:#CFC6BA;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#12100E; --surface:#1C1816; --line:#332C27; --text:#F3EEE7; --sub:#A59E96; --gold:#C5A880; --gold-soft:#2C251D; --danger:#F2857C; --ok:#7FC794; --rail:#0C0A09; }
+}
+* { box-sizing:border-box; }
+html, body { margin:0; height:100%; }
+body { font:15px/1.5 'Be Vietnam Pro', system-ui, sans-serif; background:var(--bg); color:var(--text); }
+button, input, select, textarea { font:inherit; color:inherit; }
+button { cursor:pointer; }
+:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+[hidden] { display:none !important; }
+
+/* Đăng nhập */
+#login { min-height:100%; display:grid; place-items:center; padding:24px 16px; }
+.login-box { width:100%; max-width:440px; }
+.login-box h1 { font-size:26px; line-height:1.25; margin:0 0 8px; }
+.login-box ol { padding-left:20px; color:var(--sub); margin:16px 0; }
+.login-box li { margin-bottom:6px; }
+.login-box a { color:var(--gold); }
+
+/* Khung chính */
+#app { display:grid; grid-template-columns:210px minmax(0,1fr) minmax(0,460px); height:100dvh; }
+#rail { background:var(--rail); color:var(--rail-text); display:flex; flex-direction:column; padding:20px 12px; gap:2px; overflow:auto; }
+.brand { color:#fff; font-weight:700; font-size:20px; padding:0 12px 16px; letter-spacing:.02em; }
+.brand span { color:#C5A880; }
+#rail button.tab { background:none; border:0; color:inherit; text-align:left; padding:10px 12px; border-radius:8px; }
+#rail button.tab:hover { background:rgba(255,255,255,.07); }
+#rail button.tab.on { background:#C5A880; color:#1A1613; font-weight:600; }
+.rail-foot { margin-top:auto; padding:12px; display:flex; flex-direction:column; gap:8px; font-size:13px; }
+.rail-foot a, .rail-foot button { color:inherit; background:none; border:0; padding:0; text-align:left; text-decoration:underline; }
+
+#main { display:flex; flex-direction:column; min-height:0; border-right:1px solid var(--line); }
+#topbar { display:flex; align-items:center; gap:10px; padding:12px 24px; border-bottom:1px solid var(--line); background:var(--surface); }
+#panelTitle { font-size:18px; font-weight:600; margin:0; flex:1; min-width:0; }
+#editor { flex:1; overflow:auto; padding:20px 24px 96px; }
+#editor > * { max-width:640px; }
+#notice { margin:0 0 16px; padding:10px 12px; border-left:3px solid var(--danger); background:var(--surface); color:var(--text); }
+
+.btn { border:1px solid var(--line); background:var(--surface); padding:0 16px; min-height:42px; border-radius:8px; font-weight:500; }
+.btn:hover { border-color:var(--gold); }
+.btn.primary { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:600; }
+.btn.primary:disabled { opacity:.4; cursor:default; }
+@media (prefers-color-scheme: dark) { .btn.primary { background:#C5A880; color:#1A1613; border-color:#C5A880; } }
+.btn.small { min-height:36px; padding:0 10px; font-size:13px; }
+.btn.wide { width:100%; }
+#status { font-size:13px; color:var(--sub); }
+#status.ok { color:var(--ok); } #status.err { color:var(--danger); }
+
+/* Trường nhập */
+.field { display:block; margin-bottom:16px; }
+.field > span.lb { display:block; font-weight:500; margin-bottom:4px; font-size:14px; }
+.field small { display:block; color:var(--sub); margin-top:4px; font-size:13px; }
+input[type=text], input[type=url], input[type=password], textarea, select {
+  width:100%; background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px 12px; min-height:44px; font-size:16px;
+}
+textarea { resize:vertical; min-height:84px; }
+.check { display:flex; align-items:center; gap:10px; margin-bottom:16px; min-height:32px; }
+.check input { width:20px; height:20px; accent-color:var(--gold); }
+.color { display:flex; gap:8px; align-items:center; }
+.color input[type=color] { width:48px; height:44px; padding:2px; border:1px solid var(--line); border-radius:8px; background:var(--surface); flex:none; }
+.group { font-size:15px; font-weight:600; margin:28px 0 12px; padding-top:16px; border-top:1px solid var(--line); }
+.group:first-child { margin-top:0; padding-top:0; border-top:0; }
+
+/* Danh sách */
+.list { margin-bottom:20px; }
+.list > .lb { font-weight:600; margin-bottom:8px; }
+.item { background:var(--surface); border:1px solid var(--line); border-radius:10px; margin-bottom:8px; }
+.item.off .item-name { opacity:.5; text-decoration:line-through; }
+.item-head { display:flex; align-items:center; gap:4px; padding:4px 6px 4px 4px; }
+.item-name { flex:1; min-width:0; background:none; border:0; text-align:left; padding:8px; min-height:44px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; font-weight:500; }
+.icon { width:36px; height:36px; flex:none; border:0; background:none; border-radius:6px; color:var(--sub); font-size:14px; }
+.icon:hover:not(:disabled) { background:var(--gold-soft); color:var(--text); }
+.icon:disabled { opacity:.25; cursor:default; }
+.icon.del:hover { color:var(--danger); }
+.item-body { padding:8px 12px 4px; border-top:1px solid var(--line); }
+.item-body .list .item { background:var(--bg); }
+
+/* Xem trước */
+#previewPane { display:flex; flex-direction:column; min-height:0; background:var(--bg); }
+#previewBar { display:flex; align-items:center; gap:6px; padding:12px; border-bottom:1px solid var(--line); background:var(--surface); }
+#previewBar .spacer { flex:1; }
+.seg { display:flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+.seg button { border:0; background:none; padding:0 12px; min-height:36px; font-size:13px; }
+.seg button.on { background:var(--gold-soft); font-weight:600; }
+#stage { flex:1; min-height:0; display:flex; justify-content:center; padding:12px; overflow:hidden; }
+#frame { border:1px solid var(--line); background:#fff; width:390px; max-width:100%; height:100%; border-radius:8px; }
+#stage.desktop #frame { width:1280px; max-width:none; flex:none; transform-origin:top center; }
+#closePreview { display:none; }
+#mobileBar { display:none; }
+
+@media (max-width:1180px) {
+  #app { grid-template-columns:190px minmax(0,1fr); }
+  #previewPane { display:none; position:fixed; inset:0; z-index:40; }
+  #previewPane.open { display:flex; }
+  #closePreview { display:inline-block; }
+  #openPreview { display:inline-block !important; }
+}
+@media (max-width:760px) {
+  #app { display:flex; flex-direction:column; }
+  #rail { flex-direction:row; align-items:center; padding:8px 12px; gap:4px; overflow-x:auto; flex:none; scrollbar-width:none; }
+  #rail::-webkit-scrollbar { display:none; }
+  .brand { padding:0 8px 0 0; font-size:17px; }
+  #rail button.tab { white-space:nowrap; padding:8px 12px; flex:none; }
+  .rail-foot { display:none; }
+  #main { border-right:0; flex:1; }
+  #topbar { padding:10px 16px; }
+  #topbar .desktop-only { display:none !important; }
+  #editor { padding:16px 16px 110px; }
+  #mobileBar { display:flex; gap:8px; position:fixed; left:0; right:0; bottom:0; padding:10px 16px calc(10px + env(safe-area-inset-bottom)); background:var(--surface); border-top:1px solid var(--line); z-index:30; }
+  #mobileBar .btn { flex:1; }
+  #previewBar .seg { display:none; }
+}
+@media (prefers-reduced-motion: no-preference) { .btn, .icon, #rail button.tab { transition:background .15s, border-color .15s; } }
+</style>
+</head>
+<body>
+
+<div id="login" hidden>
+  <form class="login-box" id="loginForm">
+    <h1>Đăng nhập Dino Admin</h1>
+    <p style="color:var(--sub);margin:0">Dán GitHub token để sửa trang khunglongcon.com. Mỗi thiết bị chỉ cần dán một lần.</p>
+    <ol>
+      <li>Mở <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">trang tạo token của GitHub</a>.</li>
+      <li>Ở Repository access, chọn Only select repositories, chọn <b>khunglongcon</b>.</li>
+      <li>Ở Permissions, mở Contents và chọn Read and write.</li>
+      <li>Bấm Generate token, sao chép rồi dán xuống đây.</li>
+    </ol>
+    <label class="field"><span class="lb">GitHub token</span>
+      <input type="password" id="tokenInput" autocomplete="off" required placeholder="github_pat_...">
+    </label>
+    <button class="btn primary wide" type="submit" id="loginBtn">Đăng nhập</button>
+    <p id="loginError" style="color:var(--danger)" hidden></p>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <nav id="rail" aria-label="Các phần của trang">
+    <div class="brand">DINO<span>.</span></div>
+    <div class="rail-foot">
+      <a href="/" target="_blank" rel="noopener">Mở trang thật</a>
+      <button type="button" id="logoutBtn">Đăng xuất thiết bị này</button>
+    </div>
+  </nav>
+
+  <main id="main">
+    <header id="topbar">
+      <h2 id="panelTitle"></h2>
+      <span id="status" role="status"></span>
+      <button class="btn small desktop-only" id="discardBtn" type="button" hidden>Bỏ thay đổi</button>
+      <button class="btn desktop-only" id="openPreview" type="button" style="display:none">Xem trước</button>
+      <button class="btn primary desktop-only" id="saveBtn" type="button" disabled>Lưu và đăng</button>
+    </header>
+    <div id="editor"></div>
+  </main>
+
+  <aside id="previewPane" aria-label="Xem trước">
+    <div id="previewBar">
+      <button class="btn small" id="closePreview" type="button">Đóng</button>
+      <div class="seg">
+        <button type="button" id="viewPhone" class="on">Điện thoại</button>
+        <button type="button" id="viewDesktop">Máy tính</button>
+      </div>
+      <span class="spacer"></span>
+      <button class="btn small" id="refreshPreview" type="button">Tải lại</button>
+    </div>
+    <div id="stage"><iframe id="frame" title="Xem trước trang chủ" sandbox="allow-scripts allow-same-origin"></iframe></div>
+  </aside>
+
+  <div id="mobileBar">
+    <button class="btn" id="openPreviewM" type="button">Xem trước</button>
+    <button class="btn primary" id="saveBtnM" type="button" disabled>Lưu và đăng</button>
+  </div>
+</div>
+
+<script src="site/render.js"></script>
+<script>
+const OWNER = 'hoanghuy76224', REPO = 'khunglongcon';
+const BRANCH = new URLSearchParams(location.search).get('branch') || 'main';
+const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
+const TOKEN_KEY = 'dino_admin_token';
+const DEFAULT_THEME = { accent:'#C5A880', accentDeep:'#AA8B56', ink:'#1A1613', paper:'#FAF8F5', soft:'#F5F2EB', muted:'#5A524C', fontSerif:'Cormorant Garamond', fontSans:'Inter' };
+const SECTION_NAMES = { hero:'Phần mở đầu', about:'Câu chuyện', templates:'Kho mẫu', services:'Tính năng', process:'Quy trình', pricing:'Bảng giá', order:'Form đặt thiết kế' };
+
+const $ = (id) => document.getElementById(id);
+const store = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { localStorage.setItem(k, v); } catch {} },
+  del(k) { try { localStorage.removeItem(k); } catch {} },
+};
+
+let token = store.get(TOKEN_KEY) || '';
+let content = null, baseline = '', template = '', indexHtml = '', headSha = '', handEdited = false;
+let pendingOg = null, currentPanel = 'layout', saving = false, previewTimer = null;
+const openItems = new WeakSet();
+
+/* ---------- GitHub ---------- */
+async function gh(path, opts = {}) {
+  const res = await fetch(path.startsWith('http') ? path : API + path, {
+    cache: 'no-store',
+    ...opts,
+    headers: { Authorization: `Bearer ${token}`, Accept: opts.accept || 'application/vnd.github+json', ...(opts.body ? { 'Content-Type': 'application/json' } : {}) },
+  });
+  if (!res.ok) {
+    const e = new Error(`GitHub trả lỗi ${res.status}`);
+    e.status = res.status;
+    throw e;
+  }
+  return opts.accept ? res.text() : res.json();
+}
+const rawFile = (path, ref) => gh(`/contents/${path}?ref=${ref}`, { accept: 'application/vnd.github.raw+json' });
+const getHead = async () => (await gh(`/git/ref/heads/${BRANCH}`)).object.sha;
+
+async function loadAll() {
+  headSha = await getHead();
+  const [c, t, i] = await Promise.all([rawFile('site/content.json', headSha), rawFile('site/template.html', headSha), rawFile('index.html', headSha)]);
+  content = JSON.parse(c);
+  baseline = JSON.stringify(content);
+  template = t;
+  indexHtml = i;
+  handEdited = DinoRender.render(template, content) !== indexHtml;
+  pendingOg = null;
+}
+
+async function publish() {
+  const head = await getHead();
+  if (head !== headSha) {
+    const latest = JSON.stringify(JSON.parse(await rawFile('site/content.json', head)));
+    if (latest !== baseline) throw new Error('Nội dung trên GitHub vừa thay đổi từ nơi khác. Tải lại trang rồi sửa lại để không ghi đè.');
+    template = await rawFile('site/template.html', head);
+  }
+  const headCommit = await gh(`/git/commits/${head}`);
+  const html = DinoRender.render(template, content);
+  const tree = [
+    { path: 'site/content.json', mode: '100644', type: 'blob', content: JSON.stringify(content, null, 2) },
+    { path: 'index.html', mode: '100644', type: 'blob', content: html },
+  ];
+  if (pendingOg) {
+    const blob = await gh('/git/blobs', { method: 'POST', body: JSON.stringify({ content: pendingOg, encoding: 'base64' }) });
+    tree.push({ path: 'og-image.jpg', mode: '100644', type: 'blob', sha: blob.sha });
+  }
+  const newTree = await gh('/git/trees', { method: 'POST', body: JSON.stringify({ base_tree: headCommit.tree.sha, tree }) });
+  const commit = await gh('/git/commits', { method: 'POST', body: JSON.stringify({ message: 'Cập nhật nội dung từ trang admin', tree: newTree.sha, parents: [head] }) });
+  await gh(`/git/refs/heads/${BRANCH}`, { method: 'PATCH', body: JSON.stringify({ sha: commit.sha }) });
+  headSha = commit.sha;
+  indexHtml = html;
+  baseline = JSON.stringify(content);
+  handEdited = false;
+  pendingOg = null;
+}
+
+/* ---------- Định nghĩa các phần chỉnh sửa ---------- */
+const richHelp = 'Viết **chữ** để in đậm. Xuống dòng để ngắt dòng.';
+const plainItem = (fields, name) => ({ fields, name });
+const PANELS = {
+  layout: { label: 'Bố cục', build: buildLayout },
+  general: { label: 'Thông tin chung', fields: [
+    { group: 'Khi chia sẻ link và trên Google' },
+    { path: 'meta.title', label: 'Tiêu đề trang' },
+    { path: 'meta.description', label: 'Mô tả ngắn', type: 'textarea' },
+    { custom: ogField },
+    { group: 'Đầu trang' },
+    { path: 'brand', label: 'Tên thương hiệu' },
+    { path: 'headerCta', label: 'Chữ trên nút góc phải' },
+    { group: 'Thanh thông báo' },
+    { path: 'banner.visible', label: 'Hiện thanh thông báo', type: 'bool' },
+    { path: 'banner.icon', label: 'Biểu tượng' },
+    { path: 'banner.text', label: 'Nội dung', type: 'textarea' },
+    { group: 'Liên hệ' },
+    { path: 'contact.zaloUrl', label: 'Link Zalo', type: 'url' },
+    { path: 'contact.messengerUrl', label: 'Link Messenger', type: 'url' },
+    { group: 'Chân trang' },
+    { path: 'footer.tagline', label: 'Câu giới thiệu', type: 'textarea' },
+    { path: 'footer.copyright', label: 'Dòng bản quyền' },
+  ]},
+  hero: { label: 'Phần mở đầu', anchor: null, fields: [
+    { path: 'hero.eyebrowIcon', label: 'Biểu tượng' },
+    { path: 'hero.eyebrow', label: 'Dòng nhỏ trên tiêu đề' },
+    { path: 'hero.title', label: 'Tiêu đề lớn', type: 'textarea', help: 'Viết *chữ* để in nghiêng màu nhấn. Xuống dòng để ngắt dòng.' },
+    { path: 'hero.subtitle', label: 'Đoạn giới thiệu', type: 'textarea' },
+    { path: 'hero.noteTitle', label: 'Tiêu đề ghi chú' },
+    { path: 'hero.noteText', label: 'Nội dung ghi chú', type: 'textarea', help: richHelp },
+    { path: 'hero.ctaPrimary', label: 'Nút chính' },
+    { path: 'hero.ctaSecondary', label: 'Nút phụ' },
+    { path: 'hero.hint', label: 'Dòng nhắc dưới điện thoại' },
+  ]},
+  about: { label: 'Câu chuyện', anchor: 'about', fields: [
+    { path: 'about.tag', label: 'Nhãn' },
+    { path: 'about.quote', label: 'Câu trích' },
+    { path: 'about.paragraphs', label: 'Các đoạn văn', type: 'list', addLabel: 'Thêm đoạn', name: (p) => p.text, make: () => ({ text: '' }),
+      fields: [{ key: 'text', label: 'Nội dung', type: 'textarea', help: 'Viết **chữ** để in đậm, __chữ__ để in đậm màu nhấn.' }] },
+    { path: 'about.note', label: 'Lời nhắn cuối', type: 'textarea' },
+  ]},
+  templates: { label: 'Kho mẫu', anchor: 'templates', fields: [
+    { path: 'templates.title', label: 'Tiêu đề' },
+    { path: 'templates.subtitle', label: 'Mô tả', type: 'textarea' },
+    { path: 'templates.items', label: 'Các mẫu', type: 'list', hideable: true, addLabel: 'Thêm mẫu', name: (t) => t.title || 'Mẫu mới',
+      make: () => ({ id: 'mau-' + Date.now().toString(36), visible: true, tab: '', title: '', badge: 'Bespoke Class', description: '', url: 'https://', darkPreview: false, selectName: '' }),
+      fields: [
+        { key: 'title', label: 'Tên mẫu' },
+        { key: 'url', label: 'Link demo', type: 'url' },
+        { key: 'tab', label: 'Tên ngắn trên điện thoại', help: 'Nút chọn mẫu ở phần mở đầu. Để trống thì dùng tên mẫu.' },
+        { key: 'badge', label: 'Nhãn phân loại' },
+        { key: 'description', label: 'Mô tả', type: 'textarea' },
+        { key: 'selectName', label: 'Tên điền vào form khi khách chọn', help: 'Để trống thì dùng tên mẫu.' },
+        { key: 'darkPreview', label: 'Khung xem trước nền đen', type: 'bool' },
+      ] },
+  ]},
+  services: { label: 'Tính năng', anchor: 'services', fields: [
+    { path: 'services.title', label: 'Tiêu đề' },
+    { path: 'services.subtitle', label: 'Mô tả', type: 'textarea' },
+    { path: 'services.items', label: 'Các tính năng', type: 'list', addLabel: 'Thêm tính năng', name: (s) => `${s.icon} ${s.title}`, make: () => ({ icon: '✨', title: '', description: '' }),
+      fields: [{ key: 'icon', label: 'Biểu tượng' }, { key: 'title', label: 'Tên' }, { key: 'description', label: 'Mô tả', type: 'textarea' }] },
+  ]},
+  process: { label: 'Quy trình', anchor: 'process', fields: [
+    { path: 'process.title', label: 'Tiêu đề' },
+    { path: 'process.subtitle', label: 'Mô tả', type: 'textarea' },
+    { path: 'process.items', label: 'Các bước', type: 'list', addLabel: 'Thêm bước', name: (s) => s.title || 'Bước mới', make: () => ({ title: '', description: '' }),
+      fields: [{ key: 'title', label: 'Tên bước' }, { key: 'description', label: 'Mô tả', type: 'textarea' }] },
+  ]},
+  pricing: { label: 'Bảng giá', anchor: 'pricing', fields: [
+    { path: 'pricing.title', label: 'Tiêu đề' },
+    { path: 'pricing.subtitle', label: 'Mô tả', type: 'textarea' },
+    { path: 'pricing.plans', label: 'Các gói', type: 'list', addLabel: 'Thêm gói', name: (p) => `${p.name || 'Gói mới'} (${p.price || 'chưa có giá'})`,
+      make: () => ({ name: '', tagline: '', badge: '', price: '', unit: '/ trọn gói', featured: false, ctaLabel: 'Chọn gói này', selectName: '', features: [] }),
+      fields: [
+        { key: 'name', label: 'Tên gói' },
+        { key: 'price', label: 'Giá' },
+        { key: 'unit', label: 'Đơn vị' },
+        { key: 'tagline', label: 'Dòng mô tả' },
+        { key: 'badge', label: 'Nhãn nổi bật', help: 'Để trống nếu không cần.' },
+        { key: 'featured', label: 'Gói nổi bật (viền vàng)', type: 'bool' },
+        { key: 'ctaLabel', label: 'Chữ trên nút' },
+        { key: 'selectName', label: 'Tên điền vào form khi khách chọn', help: 'Để trống thì dùng tên gói.' },
+        { key: 'features', label: 'Quyền lợi', type: 'list', addLabel: 'Thêm quyền lợi', name: (f) => f.text || 'Quyền lợi mới', make: () => ({ text: '', style: 'normal' }),
+          fields: [
+            { key: 'text', label: 'Nội dung', help: 'Viết **chữ** để in đậm.' },
+            { key: 'style', label: 'Kiểu chữ', type: 'select', options: [['normal', 'Thường'], ['strong', 'Đậm vừa'], ['gold', 'Màu nhấn']] },
+          ] },
+      ] },
+    { path: 'pricing.note', label: 'Ghi chú cuối bảng giá', type: 'textarea' },
+  ]},
+  order: { label: 'Form đặt thiết kế', anchor: 'order', fields: [
+    { path: 'order.title', label: 'Tiêu đề', type: 'textarea' },
+    { path: 'order.description', label: 'Mô tả', type: 'textarea' },
+    { path: 'order.trust', label: 'Cam kết', type: 'list', addLabel: 'Thêm cam kết', name: (t) => `${t.icon} ${t.text}`, make: () => ({ icon: '✅', text: '' }),
+      fields: [{ key: 'icon', label: 'Biểu tượng' }, { key: 'text', label: 'Nội dung' }] },
+    { group: 'Các ô nhập' },
+    { path: 'order.nameLabel', label: 'Ô họ tên' },
+    { path: 'order.namePlaceholder', label: 'Gợi ý ô họ tên' },
+    { path: 'order.phoneLabel', label: 'Ô số điện thoại' },
+    { path: 'order.phonePlaceholder', label: 'Gợi ý ô số điện thoại' },
+    { path: 'order.serviceLabel', label: 'Ô chọn gói' },
+    { path: 'order.options', label: 'Lựa chọn trong ô chọn gói', type: 'list', addLabel: 'Thêm lựa chọn', name: (o) => o.label || 'Lựa chọn mới', make: () => ({ value: 'other-' + Date.now().toString(36), label: '' }),
+      fields: [{ key: 'label', label: 'Nội dung' }] },
+    { path: 'order.messageLabel', label: 'Ô yêu cầu riêng' },
+    { path: 'order.messagePlaceholder', label: 'Gợi ý ô yêu cầu riêng' },
+    { path: 'order.submitLabel', label: 'Nút gửi' },
+    { group: 'Sau khi gửi' },
+    { path: 'order.successTitle', label: 'Tiêu đề thông báo' },
+    { path: 'order.successText', label: 'Nội dung thông báo', type: 'textarea' },
+    { path: 'order.successButton', label: 'Nút đóng' },
+    { path: 'order.formAction', label: 'Địa chỉ nhận form (Formspree)', type: 'url' },
+  ]},
+};
+
+/* ---------- Dựng form ---------- */
+function el(tag, props = {}, ...kids) {
+  const n = Object.assign(document.createElement(tag), props);
+  kids.flat().forEach((k) => k != null && n.append(k));
+  return n;
+}
+const getPath = (o, p) => p.split('.').reduce((a, k) => a[k], o);
+const parentOf = (o, p) => { const ks = p.split('.'); const last = ks.pop(); return [ks.reduce((a, k) => a[k], o), last]; };
+
+function fieldFor(def, obj, key) {
+  const type = def.type || 'text';
+  if (type === 'bool') {
+    const i = el('input', { type: 'checkbox', checked: !!obj[key] });
+    i.onchange = () => { obj[key] = i.checked; changed(); };
+    return el('label', { className: 'check' }, i, def.label);
+  }
+  if (type === 'list') return listFor(def, obj[key]);
+  let input;
+  if (type === 'textarea') input = el('textarea', { rows: 3, value: obj[key] ?? '' });
+  else if (type === 'select') {
+    input = el('select');
+    def.options.forEach(([v, l]) => input.append(el('option', { value: v, textContent: l })));
+    input.value = obj[key] ?? def.options[0][0];
+  } else input = el('input', { type: type === 'url' ? 'url' : 'text', value: obj[key] ?? '' });
+  input.oninput = () => { obj[key] = input.value; changed(); if (def.onName) def.onName(); };
+  return el('label', { className: 'field' }, el('span', { className: 'lb', textContent: def.label }), input, def.help ? el('small', { textContent: def.help }) : null);
+}
+
+function listFor(def, arr) {
+  const box = el('div', { className: 'list' });
+  const paint = () => {
+    box.replaceChildren(el('div', { className: 'lb', textContent: def.label }));
+    arr.forEach((it, i) => box.append(itemFor(def, arr, it, i, paint)));
+    if (def.make) {
+      const add = el('button', { type: 'button', className: 'btn small', textContent: def.addLabel });
+      add.onclick = () => { const n = def.make(); arr.push(n); openItems.add(n); changed(); paint(); };
+      box.append(add);
+    }
+  };
+  paint();
+  return box;
+}
+
+function itemFor(def, arr, it, i, paint) {
+  const open = openItems.has(it);
+  const row = el('div', { className: 'item' + (it.visible === false ? ' off' : '') });
+  const label = () => String(def.name(it) || '').replace(/\*|_/g, '').slice(0, 70) || '(trống)';
+  const name = el('button', { type: 'button', className: 'item-name', textContent: label() });
+  name.setAttribute('aria-expanded', open);
+  name.onclick = () => { open ? openItems.delete(it) : openItems.add(it); paint(); };
+  const icon = (text, title, fn, disabled, extra = '') => {
+    const b = el('button', { type: 'button', className: 'icon ' + extra, textContent: text, title, disabled });
+    b.setAttribute('aria-label', title);
+    b.onclick = fn;
+    return b;
+  };
+  const move = (d) => () => { arr.splice(i + d, 0, arr.splice(i, 1)[0]); changed(); paint(); };
+  const head = el('div', { className: 'item-head' }, name,
+    icon('▲', 'Chuyển lên', move(-1), i === 0),
+    icon('▼', 'Chuyển xuống', move(1), i === arr.length - 1));
+  if (def.hideable) head.append(icon(it.visible === false ? '◌' : '●', it.visible === false ? 'Đang ẩn, bấm để hiện' : 'Đang hiện, bấm để ẩn', () => { it.visible = it.visible === false; changed(); paint(); }));
+  if (def.make) head.append(icon('✕', 'Xóa', () => { if (confirm(`Xóa "${label()}"?`)) { arr.splice(i, 1); changed(); paint(); } }, false, 'del'));
+  row.append(head);
+  if (open) row.append(el('div', { className: 'item-body' }, (def.fields || []).map((f) => fieldFor({ ...f, onName: () => { name.textContent = label(); } }, it, f.key))));
+  return row;
+}
+
+function ogField() {
+  const file = el('input', { type: 'file', accept: 'image/jpeg' });
+  const hint = el('small', { textContent: 'Ảnh hiện lên khi chia sẻ link Facebook, Zalo. Dùng file JPG dưới 2MB, tỉ lệ 1200 x 630.' });
+  file.onchange = () => {
+    const f = file.files[0];
+    if (!f) return;
+    if (f.size > 2 * 1024 * 1024) { hint.textContent = 'Ảnh lớn hơn 2MB. Chọn ảnh nhỏ hơn.'; file.value = ''; return; }
+    const r = new FileReader();
+    r.onload = () => { pendingOg = String(r.result).split(',')[1]; hint.textContent = `Đã chọn ${f.name}. Ảnh sẽ được thay khi lưu.`; changed(); };
+    r.readAsDataURL(f);
+  };
+  return el('label', { className: 'field' }, el('span', { className: 'lb', textContent: 'Ảnh chia sẻ' }), file, hint);
+}
+
+function buildLayout() {
+  const box = document.createDocumentFragment();
+  box.append(el('div', { className: 'group', textContent: 'Thứ tự và ẩn hiện các khối' }));
+  box.append(listFor({ label: '', hideable: true, name: (s) => SECTION_NAMES[s.key],
+    fields: [{ key: 'navLabel', label: 'Tên trên menu', help: 'Để trống thì khối này không xuất hiện trên menu.' }] }, content.layout));
+  box.append(el('div', { className: 'group', textContent: 'Màu sắc' }));
+  const th = content.theme;
+  [['accent', 'Màu nhấn'], ['accentDeep', 'Màu nhấn đậm'], ['ink', 'Màu chữ và nút'], ['muted', 'Màu chữ phụ'], ['paper', 'Nền chính'], ['soft', 'Nền xen kẽ']].forEach(([k, l]) => {
+    const pick = el('input', { type: 'color', value: th[k] });
+    const hex = el('input', { type: 'text', value: th[k], maxLength: 7 });
+    pick.oninput = () => { th[k] = hex.value = pick.value.toUpperCase(); changed(); };
+    hex.oninput = () => { if (/^#[0-9a-f]{6}$/i.test(hex.value)) { th[k] = hex.value; pick.value = hex.value; changed(); } };
+    box.append(el('label', { className: 'field' }, el('span', { className: 'lb', textContent: l }), el('div', { className: 'color' }, pick, hex)));
+  });
+  box.append(el('div', { className: 'group', textContent: 'Font chữ' }));
+  const opts = (list) => list.map((f) => [f, f]);
+  box.append(fieldFor({ label: 'Font tiêu đề', type: 'select', options: opts(DinoRender.SERIF_FONTS) }, th, 'fontSerif'));
+  box.append(fieldFor({ label: 'Font nội dung', type: 'select', options: opts(DinoRender.SANS_FONTS) }, th, 'fontSans'));
+  const reset = el('button', { type: 'button', className: 'btn small', textContent: 'Về màu và font gốc' });
+  reset.onclick = () => { Object.assign(content.theme, DEFAULT_THEME); changed(); showPanel(currentPanel); };
+  box.append(reset);
+  return box;
+}
+
+function showPanel(key) {
+  currentPanel = key;
+  const p = PANELS[key];
+  document.querySelectorAll('#rail .tab').forEach((b) => b.classList.toggle('on', b.dataset.key === key));
+  $('panelTitle').textContent = p.label;
+  const ed = $('editor');
+  ed.replaceChildren();
+  ed.scrollTop = 0;
+  if (handEdited) ed.append(el('p', { id: 'notice', textContent: 'index.html trên GitHub đã bị sửa tay ngoài trang admin. Khi lưu, phần sửa tay đó sẽ bị ghi đè.' }));
+  if (BRANCH !== 'main') ed.append(el('p', { id: 'notice', textContent: `Đang sửa trên nhánh thử ${BRANCH}, không ảnh hưởng trang thật.` }));
+  if (p.build) ed.append(p.build());
+  else p.fields.forEach((f) => {
+    if (f.group) ed.append(el('div', { className: 'group', textContent: f.group }));
+    else if (f.custom) ed.append(f.custom());
+    else { const [o, k] = parentOf(content, f.path); ed.append(fieldFor(f, o, k)); }
+  });
+  scrollPreview();
+}
+
+/* ---------- Trạng thái, xem trước, lưu ---------- */
+const isDirty = () => !!content && (JSON.stringify(content) !== baseline || !!pendingOg);
+function setStatus(text, cls = '') { $('status').textContent = text; $('status').className = cls; }
+
+function changed() {
+  const d = isDirty();
+  $('saveBtn').disabled = $('saveBtnM').disabled = !d || saving;
+  $('discardBtn').hidden = !d;
+  setStatus(d ? 'Chưa lưu' : '');
+  clearTimeout(previewTimer);
+  previewTimer = setTimeout(renderPreview, 700);
+}
+
+const previewVisible = () => getComputedStyle($('previewPane')).display !== 'none';
+
+function renderPreview() {
+  if (!content || !previewVisible()) return;
+  const frame = $('frame');
+  let y = 0;
+  try { y = frame.contentWindow.scrollY || 0; } catch {}
+  const html = DinoRender.render(template, content).replace(/(id="contactForm" action=")[^"]*/, '$1#xem-truoc');
+  frame.onload = () => { try { frame.contentWindow.scrollTo({ top: y, behavior: 'instant' }); } catch {} };
+  frame.srcdoc = html;
+}
+
+function scrollPreview() {
+  const a = PANELS[currentPanel].anchor;
+  try {
+    const w = $('frame').contentWindow;
+    if (a) w.document.getElementById(a)?.scrollIntoView({ behavior: 'smooth' });
+    else if (a === null) w.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch {}
+}
+
+function fitDesktop() {
+  const stage = $('stage'), frame = $('frame');
+  if (!stage.classList.contains('desktop')) { frame.style.transform = ''; frame.style.height = ''; return; }
+  const s = Math.min(1, (stage.clientWidth - 24) / 1280);
+  frame.style.transform = `scale(${s})`;
+  frame.style.height = `${(stage.clientHeight - 24) / s}px`;
+}
+
+function validate() {
+  const bad = (content.templates.items || []).find((t) => !t.title.trim() || !/^https?:\/\/.+\..+/.test(t.url));
+  if (bad) return `Mẫu "${bad.title || 'chưa đặt tên'}" cần có tên và link demo đúng dạng https://...`;
+  return '';
+}
+
+async function save() {
+  const err = validate();
+  if (err) { setStatus(err, 'err'); return; }
+  if (handEdited && !confirm('index.html đã bị sửa tay ngoài admin. Lưu sẽ ghi đè phần đó. Tiếp tục?')) return;
+  saving = true;
+  $('saveBtn').disabled = $('saveBtnM').disabled = true;
+  setStatus('Đang lưu...');
+  try {
+    await publish();
+    setStatus('Đã lưu. Trang thật cập nhật sau vài phút.', 'ok');
+    saving = false;
+    $('discardBtn').hidden = true;
+    $('saveBtn').disabled = $('saveBtnM').disabled = true;
+    if (document.getElementById('notice')) showPanel(currentPanel);
+  } catch (e) {
+    saving = false;
+    $('saveBtn').disabled = $('saveBtnM').disabled = false;
+    setStatus(e.status === 401 || e.status === 403 ? 'Token không có quyền ghi vào repo. Đăng xuất rồi tạo token mới.' : e.message, 'err');
+  }
+}
+
+/* ---------- Khởi động ---------- */
+function showLogin(msg) {
+  $('app').hidden = true;
+  $('login').hidden = false;
+  const box = $('loginError');
+  box.hidden = !msg;
+  box.textContent = msg || '';
+}
+
+async function start() {
+  try {
+    await loadAll();
+  } catch (e) {
+    if (e.status === 401 || e.status === 403) { store.del(TOKEN_KEY); token = ''; showLogin('Token không đúng hoặc đã hết hạn. Tạo token mới rồi dán lại.'); return; }
+    showLogin(e.status === 404 ? 'Token không đọc được repo khunglongcon. Kiểm tra lại bước chọn repo.' : `Không tải được dữ liệu: ${e.message}`);
+    return;
+  }
+  $('login').hidden = true;
+  $('app').hidden = false;
+  const rail = $('rail'), foot = rail.querySelector('.rail-foot');
+  rail.querySelectorAll('.tab').forEach((t) => t.remove());
+  Object.entries(PANELS).forEach(([k, p]) => {
+    const b = el('button', { type: 'button', className: 'tab', textContent: p.label });
+    b.dataset.key = k;
+    b.onclick = () => showPanel(k);
+    rail.insertBefore(b, foot);
+  });
+  showPanel('layout');
+  changed();
+  renderPreview();
+}
+
+$('loginForm').onsubmit = (e) => {
+  e.preventDefault();
+  token = $('tokenInput').value.trim();
+  if (!token) return;
+  store.set(TOKEN_KEY, token);
+  $('tokenInput').value = '';
+  start();
+};
+$('logoutBtn').onclick = () => { if (isDirty() && !confirm('Bỏ các thay đổi chưa lưu và đăng xuất?')) return; content = null; store.del(TOKEN_KEY); token = ''; showLogin(); };
+$('saveBtn').onclick = $('saveBtnM').onclick = save;
+$('discardBtn').onclick = () => { if (!confirm('Bỏ tất cả thay đổi chưa lưu?')) return; content = JSON.parse(baseline); pendingOg = null; showPanel(currentPanel); changed(); };
+const openPreview = () => { $('previewPane').classList.add('open'); renderPreview(); };
+$('openPreview').onclick = $('openPreviewM').onclick = openPreview;
+$('closePreview').onclick = () => $('previewPane').classList.remove('open');
+$('refreshPreview').onclick = renderPreview;
+const setView = (desk) => {
+  $('stage').classList.toggle('desktop', desk);
+  $('viewDesktop').classList.toggle('on', desk);
+  $('viewPhone').classList.toggle('on', !desk);
+  fitDesktop();
+};
+$('viewPhone').onclick = () => setView(false);
+$('viewDesktop').onclick = () => setView(true);
+addEventListener('resize', fitDesktop);
+addEventListener('beforeunload', (e) => { if (isDirty()) e.preventDefault(); });
+
+if (token) start(); else showLogin();
+</script>
+</body>
+</html>

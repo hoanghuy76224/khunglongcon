@@ -1,0 +1,367 @@
+{
+  "brand": "DINO",
+  "meta": {
+    "title": "Khunglongcon · Custom Wedding Website",
+    "description": "Thiết kế web cưới theo yêu cầu. Demo trước khi quyết."
+  },
+  "theme": {
+    "accent": "#C5A880",
+    "accentDeep": "#AA8B56",
+    "ink": "#1A1613",
+    "paper": "#FAF8F5",
+    "soft": "#F5F2EB",
+    "muted": "#5A524C",
+    "fontSerif": "Cormorant Garamond",
+    "fontSans": "Inter"
+  },
+  "headerCta": "Đặt thiết kế",
+  "banner": {
+    "visible": true,
+    "icon": "🛡️",
+    "text": "Không nhận cọc. Nhận thiết kế trước, hài lòng hoàn toàn mới thanh toán."
+  },
+  "layout": [
+    {
+      "key": "hero",
+      "visible": true,
+      "navLabel": ""
+    },
+    {
+      "key": "about",
+      "visible": true,
+      "navLabel": "Câu chuyện"
+    },
+    {
+      "key": "templates",
+      "visible": true,
+      "navLabel": "Kho mẫu"
+    },
+    {
+      "key": "services",
+      "visible": true,
+      "navLabel": "Dịch vụ"
+    },
+    {
+      "key": "process",
+      "visible": true,
+      "navLabel": "Quy trình"
+    },
+    {
+      "key": "pricing",
+      "visible": true,
+      "navLabel": "Bảng giá"
+    },
+    {
+      "key": "order",
+      "visible": true,
+      "navLabel": ""
+    }
+  ],
+  "hero": {
+    "eyebrowIcon": "🦕",
+    "eyebrow": "Dino Studio",
+    "title": "Web cưới\n*thiết kế riêng* cho ngày trọng đại của bạn.",
+    "subtitle": "Mỗi cặp đôi một thiết kế, không dùng mẫu đại trà. Xem demo chạy thật trước, ưng rồi mới chốt.",
+    "noteTitle": "Demo trước · Không rủi ro",
+    "noteText": "Huy trực tiếp thiết kế và gửi bản mẫu chạy thử. Bạn chỉ thanh toán **sau khi ưng ý** với phiên bản thật trên mạng.",
+    "ctaPrimary": "Xem kho mẫu",
+    "ctaSecondary": "Gửi yêu cầu tư vấn",
+    "hint": "Swipe to scroll inside preview device"
+  },
+  "about": {
+    "tag": "Story",
+    "quote": "\"Làm vì say mê, kiến tạo vì tình yêu\"",
+    "paragraphs": [
+      {
+        "text": "Mình là **Huy**, ngày làm Tech Team Leader, đêm thiết kế web kỷ niệm cho ngày trọng đại. Dự án này lấy cảm hứng và đặt tên theo cậu con trai sắp chào đời của mình — __Dino__."
+      },
+      {
+        "text": "Không làm theo kiểu sản xuất hàng loạt. Mỗi trang web mình viết ra đều được tùy chỉnh thủ công riêng cho ngày cưới của bạn."
+      }
+    ],
+    "note": "Cảm ơn bạn đã tin tưởng. Mỗi dự án mình dành 5-7 ngày để chỉn chu — mong bạn đặt sớm để có đủ thời gian cho cả hai bên."
+  },
+  "templates": {
+    "title": "Kho mẫu thiết kế",
+    "subtitle": "Xem các mẫu web cưới ngay trong khung trình duyệt. Cuộn lướt trực tiếp để xem cấu trúc thật bên trong mỗi mẫu.",
+    "items": [
+      {
+        "id": "classic",
+        "visible": true,
+        "tab": "Classic",
+        "title": "Template 1: Cinematic",
+        "badge": "Bespoke Class",
+        "description": "Phong cách điện ảnh, tông nâu vàng ấm, kể chuyện như một bộ phim. Mẫu thật của Quang Huy & Ngọc Trinh.",
+        "url": "https://huy-trinh.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 1: Cinematic (Quang Huy - Ngọc Trinh)"
+      },
+      {
+        "id": "modern",
+        "visible": true,
+        "tab": "Rose",
+        "title": "Template 2: Modern Rose",
+        "badge": "Bespoke Class",
+        "description": "Tối giản đương đại, tông hồng cam champagne, hiệu ứng hoa rơi.",
+        "url": "https://mockup-04.netlify.app/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "duyenkhoi",
+        "visible": true,
+        "tab": "Pure",
+        "title": "Template 3: Pure Love",
+        "badge": "Bespoke Class",
+        "description": "Bố cục kiểu tạp chí, tôn ảnh cưới làm trung tâm.",
+        "url": "https://mockup-02.netlify.app/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "vinhket",
+        "visible": true,
+        "tab": "Eternal",
+        "title": "Template 4: Eternal Bond",
+        "badge": "Bespoke Class",
+        "description": "Tích hợp bản đồ và đồng hồ đếm ngược tới ngày cưới.",
+        "url": "https://mockup-02.pages.dev",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "uyenuong",
+        "visible": true,
+        "tab": "Lovebirds",
+        "title": "Template 5: Lovebirds",
+        "badge": "Bespoke Class",
+        "description": "Tông màu nhẹ nhàng, bố cục mềm mại, sang trọng kín đáo.",
+        "url": "https://mau01.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "baby",
+        "visible": true,
+        "tab": "Baby",
+        "title": "Template 6: Baby Diary",
+        "badge": "Bespoke Class",
+        "description": "Lưu lại hành trình chờ đón con, phong cách mộc mạc dịu nhẹ.",
+        "url": "https://welcome-dino.netlify.app/#dino",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "vow",
+        "visible": true,
+        "tab": "The Vow",
+        "title": "Template 7: The Vow",
+        "badge": "Editorial Class",
+        "description": "Phong cách tạp chí thời trang, typography bản lớn, bố cục phá cách. Dành cho cặp đôi cá tính.",
+        "url": "https://mau07.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "brutal",
+        "visible": true,
+        "tab": "AURORA",
+        "title": "Template 8: AURORA ",
+        "badge": "Avant-garde",
+        "description": "Phong cách brutalist phá cách: chữ khổng lồ, đen trắng đỏ gắt, ảnh click hiện màu. Dành cho cặp đôi cá tính mạnh, muốn gây ấn tượng.",
+        "url": "https://mau08.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 8: AURORA  (Brutalist)"
+      },
+      {
+        "id": "instagram",
+        "visible": true,
+        "tab": "Instagram",
+        "title": "Template 10: Instagram Love",
+        "badge": "Social Vibe",
+        "description": "Phong cách Instagram hiện đại: grid ảnh, stories, hiệu ứng cuộn mượt mà. Dành cho cặp đôi yêu thích mạng xã hội và sự tinh tế.",
+        "url": "https://mau10.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "tiktok",
+        "visible": true,
+        "tab": "TikTok",
+        "title": "Template 9: TikTok Love",
+        "badge": "Viral Style",
+        "description": "Phong cách TikTok cuộn dọc: gate animation 3D, music player, hiệu ứng rung cảm. Dành cho cặp đôi trẻ, yêu thích sự sáng tạo.",
+        "url": "https://mau11.khunglongcon.com/",
+        "darkPreview": true,
+        "selectName": ""
+      }
+    ]
+  },
+  "services": {
+    "title": "Tính năng đi kèm",
+    "subtitle": "Mỗi web đều có sẵn các tính năng giúp ngày cưới của bạn trọn vẹn hơn.",
+    "items": [
+      {
+        "icon": "⌛",
+        "title": "Đếm ngược tự động",
+        "description": "Đếm ngược từng ngày tới thời khắc trọng đại của bạn."
+      },
+      {
+        "icon": "💌",
+        "title": "Lời chúc lưu niệm",
+        "description": "Khách mời để lại lời chúc trực tiếp trên trang."
+      },
+      {
+        "icon": "💳",
+        "title": "Mã QR mừng cưới",
+        "description": "Khách gửi quà mừng qua QR chuyển khoản gọn gàng, lịch sự."
+      },
+      {
+        "icon": "🎵",
+        "title": "Nhạc nền tự chọn",
+        "description": "Chọn bài hát yêu thích phát tự động khi khách mở trang."
+      }
+    ]
+  },
+  "process": {
+    "title": "Quy trình 3 bước",
+    "subtitle": "Làm web cưới không rủi ro, đơn giản chỉ 3 bước.",
+    "items": [
+      {
+        "title": "Chọn mẫu & Gửi tin",
+        "description": "Chọn mẫu bạn ưng nhất, gửi hình ảnh và thông tin qua Zalo."
+      },
+      {
+        "title": "Nhận bản Demo",
+        "description": "Mình căn chỉnh và gửi bản chạy thử trên mạng để bạn và gia đình xem."
+      },
+      {
+        "title": "Ưng rồi mới chốt",
+        "description": "Chỉ khi bạn ưng ý, chúng ta mới thanh toán và bàn giao."
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Bảng giá & Gói dịch vụ",
+    "subtitle": "Không rủi ro: thiết kế xong trước, ưng rồi mới thanh toán.",
+    "note": "💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%.",
+    "plans": [
+      {
+        "name": "Classic Heritage",
+        "tagline": "Áp dụng cho mẫu có sẵn",
+        "badge": "Essential",
+        "price": "100.000 đ",
+        "unit": "/ trọn gói",
+        "featured": false,
+        "ctaLabel": "Chọn Gói Classic",
+        "selectName": "Classic Heritage (Theo mẫu sẵn có - 100k)",
+        "features": [
+          {
+            "text": "Thay hình ảnh, thông tin cá nhân của bạn",
+            "style": "normal"
+          },
+          {
+            "text": "Tải lên tối đa 10 tấm hình vào album",
+            "style": "strong"
+          },
+          {
+            "text": "Tích hợp bộ đếm ngược & hòm thư chúc mừng",
+            "style": "normal"
+          },
+          {
+            "text": "Tích hợp vị trí bản đồ tổ chức buổi lễ",
+            "style": "normal"
+          },
+          {
+            "text": "Bảo hành kỹ thuật ổn định trọn đời",
+            "style": "normal"
+          }
+        ]
+      },
+      {
+        "name": "Bespoke Luxury",
+        "tagline": "Cá nhân hóa mọi chi tiết",
+        "badge": "🔥 Bestseller",
+        "price": "150.000 đ",
+        "unit": "/ trọn gói",
+        "featured": true,
+        "ctaLabel": "Chọn Gói Bespoke",
+        "selectName": "Bespoke Luxury (Tùy chỉnh riêng - 150k)",
+        "features": [
+          {
+            "text": "Tùy chọn phối màu & font chữ theo sở thích/phong thủy",
+            "style": "normal"
+          },
+          {
+            "text": "Tải lên tối đa 20 tấm hình vào album",
+            "style": "strong"
+          },
+          {
+            "text": "Tùy chọn bài hát nhạc nền phát tự động",
+            "style": "normal"
+          },
+          {
+            "text": "**Hỗ trợ tính năng RSVP xác thực khách mời tham gia**",
+            "style": "normal"
+          },
+          {
+            "text": "**Chỉnh sửa giao diện thoải mái đến khi vừa lòng mới thanh toán**",
+            "style": "normal"
+          },
+          {
+            "text": "🎁 Tặng kèm 1 ảnh thiệp cưới online đăng MXH",
+            "style": "gold"
+          }
+        ]
+      }
+    ]
+  },
+  "order": {
+    "title": "Bắt đầu\nlàm web cưới",
+    "description": "Gửi thông tin nhanh cho mình. Mình sẽ nhắn Zalo tư vấn và gửi bản demo chạy thử trong 30 phút.",
+    "trust": [
+      {
+        "icon": "🛡️",
+        "text": "Xem trước · Trả tiền sau"
+      },
+      {
+        "icon": "🔒",
+        "text": "Bảo mật hình ảnh tuyệt đối"
+      }
+    ],
+    "formAction": "https://formspree.io/f/mojbloek",
+    "nameLabel": "Họ và tên của bạn *",
+    "namePlaceholder": "Ví dụ: Nguyễn Hoàng",
+    "phoneLabel": "SĐT / Link Zalo để nhận demo *",
+    "phonePlaceholder": "Ví dụ: 0912345678",
+    "serviceLabel": "Gói dịch vụ mong muốn *",
+    "options": [
+      {
+        "value": "wedding",
+        "label": "Website Đám Cưới / Kỷ Niệm (100k - 150k)"
+      },
+      {
+        "value": "baby",
+        "label": "Nhật Ký Chờ Con Chào Đời (100k - 150k)"
+      },
+      {
+        "value": "custom_other",
+        "label": "Thiết kế hoàn toàn riêng biệt khác"
+      }
+    ],
+    "messageLabel": "Mẫu lựa chọn hoặc yêu cầu riêng",
+    "messagePlaceholder": "Nhập tên template bạn thích hoặc mô tả mong muốn của bạn...",
+    "submitLabel": "Gửi thông tin (Không cần cọc)",
+    "successTitle": "Gửi yêu cầu thành công",
+    "successText": "Mình đã nhận được thông tin của bạn. Huy sẽ liên hệ qua SĐT/Zalo để gửi bản demo miễn phí cho bạn duyệt!",
+    "successButton": "Đồng ý"
+  },
+  "footer": {
+    "tagline": "Web cưới thiết kế riêng cho từng cặp đôi. Xem demo trước, ưng rồi mới chốt.",
+    "copyright": "© 2026 Dino Studio - Crafted with precision & love."
+  },
+  "contact": {
+    "messengerUrl": "https://m.me/oitenecommentdao",
+    "zaloUrl": "https://zalo.me/0589380142"
+  }
+}
