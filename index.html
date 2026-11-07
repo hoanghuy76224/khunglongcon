@@ -34,17 +34,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Inter', sans-serif; }
         .font-luxury-serif { font-family: 'Cormorant Garamond', serif; }
-        .font-menu { font-family: 'Anton', 'Impact', 'Arial Narrow', sans-serif; font-weight: 400; letter-spacing: .01em; }
-        .menu-title { font-size: clamp(56px, 17vw, 124px); line-height: 1.2; }
-        .menu-name { font-size: clamp(24px, 6.4vw, 40px); line-height: 1.15; }
-        .menu-price { font-size: clamp(28px, 8vw, 52px); line-height: 1.05; }
-        .menu-combo-name { font-size: clamp(24px, 6.4vw, 42px); line-height: 1.15; }
-        .menu-combo-price { font-size: clamp(40px, 12vw, 96px); line-height: 1; }
         
         .scrollbar-none::-webkit-scrollbar { display: none; }
         .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
@@ -752,52 +745,57 @@
     </section>
 
     <section id="pricing" class="py-24 bg-white dark:bg-[#12100E] transition-colors duration-500">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6">
-            <div class="menu-board bg-black text-white rounded-[24px] border border-black dark:border-[#2A2420] px-5 py-10 sm:px-10 md:px-14 md:py-14 scroll-reveal">
-                <p class="text-sm md:text-base font-semibold uppercase tracking-wide">Dịch vụ thiết kế</p>
-                <h2 class="font-menu menu-title uppercase mt-4 mb-8 md:mb-12">Dấu ấn <br>ngày cưới</h2>
-                <div class="flex items-start justify-between gap-4 py-5 md:py-6 ">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-4 scroll-reveal">
+                <p class="text-xs text-[#AA8B56] font-medium">Dịch vụ thiết kế</p>
+                <h2 class="font-luxury-serif text-4xl md:text-5xl font-light text-[#1A1613] dark:text-[#FAF8F5]">Dấu ấn ngày cưới</h2>
+                <div class="w-12 h-[1px] bg-[#C5A880] mx-auto my-6"></div>
+                <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Không rủi ro: thiết kế xong trước, ưng rồi mới thanh toán.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-[#FAF8F5] dark:bg-[#1C1816] border border-[#EAE5DC] dark:border-[#2A2420] rounded-[24px] px-6 py-4 md:px-10 md:py-6 scroll-reveal transition-colors duration-500">
+                <div class="flex items-start justify-between gap-6 py-6 ">
                     <div class="min-w-0">
-                        <h3 class="font-menu menu-name uppercase">Thiệp cưới online</h3>
-                        <p class="text-sm md:text-base text-white/85 leading-relaxed mt-2 max-w-md">Thiết kế theo yêu cầu. Quản lý đặt chỗ, cá nhân hóa tên từng khách mời, lưu bút lưu giữ. Tên miền riêng mang tên cô dâu &amp; chú rể.</p>
+                        <h3 class="font-luxury-serif text-2xl md:text-3xl text-[#1A1613] dark:text-[#FAF8F5]">Thiệp cưới online</h3>
+                        <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed mt-2 max-w-md">Thiết kế theo yêu cầu. Quản lý đặt chỗ, cá nhân hóa tên từng khách mời, lưu bút lưu giữ. Tên miền riêng mang tên cô dâu &amp; chú rể.</p>
                     </div>
-                    <div class="font-menu menu-price shrink-0">150K</div>
+                    <div class="font-luxury-serif text-2xl md:text-3xl font-semibold text-[#AA8B56] shrink-0">150K</div>
                 </div>
-                <div class="flex items-start justify-between gap-4 py-5 md:py-6 border-t border-white/70">
+                <div class="flex items-start justify-between gap-6 py-6 border-t border-[#EAE5DC] dark:border-[#2A2420]">
                     <div class="min-w-0">
-                        <h3 class="font-menu menu-name uppercase">Video cưới</h3>
-                        <p class="text-sm md:text-base text-white/85 leading-relaxed mt-2 max-w-md">Thiết kế theo yêu cầu. Kể câu chuyện tình yêu của hai bạn, từ ngày yêu đến ngày cưới.</p>
+                        <h3 class="font-luxury-serif text-2xl md:text-3xl text-[#1A1613] dark:text-[#FAF8F5]">Video cưới</h3>
+                        <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed mt-2 max-w-md">Thiết kế theo yêu cầu. Kể câu chuyện tình yêu của hai bạn, từ ngày yêu đến ngày cưới.</p>
                     </div>
-                    <div class="font-menu menu-price shrink-0">100K</div>
+                    <div class="font-luxury-serif text-2xl md:text-3xl font-semibold text-[#AA8B56] shrink-0">100K</div>
                 </div>
-                <div class="flex items-start justify-between gap-4 py-5 md:py-6 border-t border-white/70">
+                <div class="flex items-start justify-between gap-6 py-6 border-t border-[#EAE5DC] dark:border-[#2A2420]">
                     <div class="min-w-0">
-                        <h3 class="font-menu menu-name uppercase">Màn hình sao rơi</h3>
+                        <h3 class="font-luxury-serif text-2xl md:text-3xl text-[#1A1613] dark:text-[#FAF8F5]">Màn hình sao rơi</h3>
                         
                     </div>
-                    <div class="font-menu menu-price shrink-0">30K</div>
+                    <div class="font-luxury-serif text-2xl md:text-3xl font-semibold text-[#AA8B56] shrink-0">30K</div>
                 </div>
-                <div class="flex items-start justify-between gap-4 py-5 md:py-6 border-t border-white/70">
+                <div class="flex items-start justify-between gap-6 py-6 border-t border-[#EAE5DC] dark:border-[#2A2420]">
                     <div class="min-w-0">
-                        <h3 class="font-menu menu-name uppercase">Slideshow ảnh cưới</h3>
-                        <p class="text-sm md:text-base text-white/85 leading-relaxed mt-2 max-w-md">Hình cô dâu &amp; chú rể trình chiếu suốt tiệc.</p>
+                        <h3 class="font-luxury-serif text-2xl md:text-3xl text-[#1A1613] dark:text-[#FAF8F5]">Slideshow ảnh cưới</h3>
+                        <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed mt-2 max-w-md">Hình cô dâu &amp; chú rể trình chiếu suốt tiệc.</p>
                     </div>
-                    <div class="font-menu menu-price shrink-0">50K</div>
+                    <div class="font-luxury-serif text-2xl md:text-3xl font-semibold text-[#AA8B56] shrink-0">50K</div>
                 </div>
-                <div class="flex items-start justify-between gap-4 py-5 md:py-6 border-t border-white/70">
+                <div class="flex items-start justify-between gap-6 py-6 border-t border-[#EAE5DC] dark:border-[#2A2420]">
                     <div class="min-w-0">
-                        <h3 class="font-menu menu-name uppercase">Cắt / ghép nhạc</h3>
-                        <p class="text-sm md:text-base text-white/85 leading-relaxed mt-2 max-w-md">Biên tập nhạc theo yêu cầu.</p>
+                        <h3 class="font-luxury-serif text-2xl md:text-3xl text-[#1A1613] dark:text-[#FAF8F5]">Cắt / ghép nhạc</h3>
+                        <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed mt-2 max-w-md">Biên tập nhạc theo yêu cầu.</p>
                     </div>
-                    <div class="font-menu menu-price shrink-0">50K</div>
+                    <div class="font-luxury-serif text-2xl md:text-3xl font-semibold text-[#AA8B56] shrink-0">50K</div>
                 </div>
-                <div class="bg-white text-black mt-4 px-4 py-5 sm:px-6 md:px-8 flex items-center justify-between gap-4">
-                    <div class="min-w-0">
-                        <h3 class="font-menu menu-combo-name uppercase">Combo trọn gói</h3>
-                        <p class="text-sm md:text-base font-medium mt-1">Bao gồm toàn bộ 5 dịch vụ</p>
-                    </div>
-                    <div class="font-menu menu-combo-price shrink-0">250K</div>
+            </div>
+            <div class="max-w-3xl mx-auto mt-6 bg-[#1A1613] dark:bg-[#C5A880] text-white dark:text-[#1A1613] rounded-[24px] px-6 py-7 md:px-10 flex items-center justify-between gap-6 scroll-reveal transition-colors duration-500">
+                <div class="min-w-0">
+                    <h3 class="font-luxury-serif text-2xl md:text-3xl">Combo trọn gói</h3>
+                    <p class="text-sm font-light opacity-80 mt-1">Bao gồm toàn bộ 5 dịch vụ</p>
                 </div>
+                <div class="font-luxury-serif text-4xl md:text-5xl font-semibold shrink-0">250K</div>
             </div>
 
             <div class="max-w-xl mx-auto mt-14 bg-[#F5F2EB] dark:bg-[#181513] border border-[#EAE5DC] dark:border-[#2A2420] rounded-[24px] p-6 text-center shadow-sm scroll-reveal transition-colors duration-500">
@@ -843,9 +841,12 @@
                     <div>
                         <label class="block text-xs uppercase tracking-widest font-semibold mb-2 text-[#1A1613] dark:text-[#FAF8F5]">Gói dịch vụ mong muốn *</label>
                         <select id="form-service" name="service_type" required class="w-full bg-[#FAF8F5] dark:bg-[#12100E] border border-[#EAE5DC] dark:border-[#2A2420] rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-[#AA8B56] transition text-[#5A524C] dark:text-[#FAF8F5] transition duration-300">
-<option value="wedding">Website Đám Cưới / Kỷ Niệm (100k - 150k)</option>
-                            <option value="baby">Nhật Ký Chờ Con Chào Đời (100k - 150k)</option>
-                            <option value="custom_other">Thiết kế hoàn toàn riêng biệt khác</option>
+<option value="wedding">Thiệp cưới online (150K)</option>
+                            <option value="video">Video cưới (100K)</option>
+                            <option value="saoroi">Màn hình sao rơi (30K)</option>
+                            <option value="slideshow">Slideshow ảnh cưới (50K)</option>
+                            <option value="nhac">Cắt / ghép nhạc (50K)</option>
+                            <option value="combo">Combo trọn gói (250K)</option>
                         </select>
                     </div>
                     <div>
@@ -977,12 +978,7 @@
             
             messageArea.value = `Xin chào Dino Wedding Service, mình muốn đăng ký thiết kế theo: ${templateName}. Vui lòng tư vấn cho mình nhé!`;
             
-            const nameLower = templateName.toLowerCase();
-            if (nameLower.includes('baby') || nameLower.includes('diary') || nameLower.includes('con')) {
-                serviceSelect.value = "baby";
-            } else if (nameLower.includes('wedding') || nameLower.includes('love') || nameLower.includes('rose') || nameLower.includes('bond') || nameLower.includes('lovebirds') || nameLower.includes('đám') || nameLower.includes('duyên') || nameLower.includes('vĩnh') || nameLower.includes('uyên')) {
-                serviceSelect.value = "wedding";
-            }
+            if (serviceSelect && serviceSelect.querySelector('option[value="wedding"]')) serviceSelect.value = "wedding";
             
             document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
         }

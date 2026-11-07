@@ -333,7 +333,8 @@ const PANELS = {
   ]},
   pricing: { label: 'Bảng giá', anchor: 'pricing', fields: [
     { path: 'pricing.eyebrow', label: 'Dòng nhỏ trên tiêu đề' },
-    { path: 'pricing.title', label: 'Tiêu đề lớn', type: 'textarea', help: 'Xuống dòng để ngắt dòng.' },
+    { path: 'pricing.title', label: 'Tiêu đề' },
+    { path: 'pricing.subtitle', label: 'Mô tả', type: 'textarea' },
     { path: 'pricing.items', label: 'Các dịch vụ', type: 'list', addLabel: 'Thêm dịch vụ', name: (i) => `${i.name || 'Dịch vụ mới'} (${i.price || 'chưa có giá'})`,
       make: () => ({ name: '', price: '', description: '' }),
       fields: [

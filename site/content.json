@@ -243,7 +243,7 @@
   },
   "pricing": {
     "eyebrow": "Dịch vụ thiết kế",
-    "title": "Dấu ấn\nngày cưới",
+    "title": "Dấu ấn ngày cưới",
     "items": [
       {
         "name": "Thiệp cưới online",
@@ -277,7 +277,8 @@
       "description": "Bao gồm toàn bộ 5 dịch vụ",
       "price": "250K"
     },
-    "note": "💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%."
+    "note": "💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%.",
+    "subtitle": "Không rủi ro: thiết kế xong trước, ưng rồi mới thanh toán."
   },
   "order": {
     "title": "Bắt đầu\nlàm web cưới",
@@ -301,15 +302,27 @@
     "options": [
       {
         "value": "wedding",
-        "label": "Website Đám Cưới / Kỷ Niệm (100k - 150k)"
+        "label": "Thiệp cưới online (150K)"
       },
       {
-        "value": "baby",
-        "label": "Nhật Ký Chờ Con Chào Đời (100k - 150k)"
+        "value": "video",
+        "label": "Video cưới (100K)"
       },
       {
-        "value": "custom_other",
-        "label": "Thiết kế hoàn toàn riêng biệt khác"
+        "value": "saoroi",
+        "label": "Màn hình sao rơi (30K)"
+      },
+      {
+        "value": "slideshow",
+        "label": "Slideshow ảnh cưới (50K)"
+      },
+      {
+        "value": "nhac",
+        "label": "Cắt / ghép nhạc (50K)"
+      },
+      {
+        "value": "combo",
+        "label": "Combo trọn gói (250K)"
       }
     ],
     "messageLabel": "Mẫu lựa chọn hoặc yêu cầu riêng",

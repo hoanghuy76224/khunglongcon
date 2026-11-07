@@ -136,11 +136,11 @@
         const list = p.items || [];
         const combo = p.combo || {};
         return fill(b.pricing, {
-          eyebrow: esc(p.eyebrow), title: rich(p.title), note: esc(p.note),
+          eyebrow: esc(p.eyebrow), title: rich(p.title), subtitle: esc(p.subtitle), note: esc(p.note),
           items: list.map((i, n) => fill(b.menuItem, {
-            border: n ? 'border-t border-white/70' : '',
+            border: n ? 'border-t border-[#EAE5DC] dark:border-[#2A2420]' : '',
             name: esc(i.name), price: esc(i.price),
-            descHtml: i.description ? `<p class="text-sm md:text-base text-white/85 leading-relaxed mt-2 max-w-md">${rich(i.description)}</p>` : '',
+            descHtml: i.description ? `<p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed mt-2 max-w-md">${rich(i.description)}</p>` : '',
           })).join('\n'),
           combo: combo.visible === false || !combo.name ? '' : fill(b.menuCombo, {
             name: esc(combo.name), description: esc(combo.description), price: esc(combo.price),
