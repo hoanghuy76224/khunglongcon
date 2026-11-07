@@ -59,7 +59,7 @@
   ],
   "hero": {
     "eyebrowIcon": "🦕",
-    "eyebrow": "Dino Studio",
+    "eyebrow": "Dino Wedding Service",
     "title": "Web cưới\n*thiết kế riêng* cho ngày trọng đại của bạn.",
     "subtitle": "Mỗi cặp đôi một thiết kế, không dùng mẫu đại trà. Xem demo chạy thật trước, ưng rồi mới chốt.",
     "noteTitle": "Demo trước · Không rủi ro",
@@ -242,79 +242,42 @@
     ]
   },
   "pricing": {
-    "title": "Bảng giá & Gói dịch vụ",
-    "subtitle": "Không rủi ro: thiết kế xong trước, ưng rồi mới thanh toán.",
-    "note": "💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%.",
-    "plans": [
+    "eyebrow": "Dịch vụ thiết kế",
+    "title": "Dấu ấn\nngày cưới",
+    "items": [
       {
-        "name": "Classic Heritage",
-        "tagline": "Áp dụng cho mẫu có sẵn",
-        "badge": "Essential",
-        "price": "100.000 đ",
-        "unit": "/ trọn gói",
-        "featured": false,
-        "ctaLabel": "Chọn Gói Classic",
-        "selectName": "Classic Heritage (Theo mẫu sẵn có - 100k)",
-        "features": [
-          {
-            "text": "Thay hình ảnh, thông tin cá nhân của bạn",
-            "style": "normal"
-          },
-          {
-            "text": "Tải lên tối đa 10 tấm hình vào album",
-            "style": "strong"
-          },
-          {
-            "text": "Tích hợp bộ đếm ngược & hòm thư chúc mừng",
-            "style": "normal"
-          },
-          {
-            "text": "Tích hợp vị trí bản đồ tổ chức buổi lễ",
-            "style": "normal"
-          },
-          {
-            "text": "Bảo hành kỹ thuật ổn định trọn đời",
-            "style": "normal"
-          }
-        ]
+        "name": "Thiệp cưới online",
+        "price": "150K",
+        "description": "Thiết kế theo yêu cầu. Quản lý đặt chỗ, cá nhân hóa tên từng khách mời, lưu bút lưu giữ. Tên miền riêng mang tên cô dâu & chú rể."
       },
       {
-        "name": "Bespoke Luxury",
-        "tagline": "Cá nhân hóa mọi chi tiết",
-        "badge": "🔥 Bestseller",
-        "price": "150.000 đ",
-        "unit": "/ trọn gói",
-        "featured": true,
-        "ctaLabel": "Chọn Gói Bespoke",
-        "selectName": "Bespoke Luxury (Tùy chỉnh riêng - 150k)",
-        "features": [
-          {
-            "text": "Tùy chọn phối màu & font chữ theo sở thích/phong thủy",
-            "style": "normal"
-          },
-          {
-            "text": "Tải lên tối đa 20 tấm hình vào album",
-            "style": "strong"
-          },
-          {
-            "text": "Tùy chọn bài hát nhạc nền phát tự động",
-            "style": "normal"
-          },
-          {
-            "text": "**Hỗ trợ tính năng RSVP xác thực khách mời tham gia**",
-            "style": "normal"
-          },
-          {
-            "text": "**Chỉnh sửa giao diện thoải mái đến khi vừa lòng mới thanh toán**",
-            "style": "normal"
-          },
-          {
-            "text": "🎁 Tặng kèm 1 ảnh thiệp cưới online đăng MXH",
-            "style": "gold"
-          }
-        ]
+        "name": "Video cưới",
+        "price": "100K",
+        "description": "Thiết kế theo yêu cầu. Kể câu chuyện tình yêu của hai bạn, từ ngày yêu đến ngày cưới."
+      },
+      {
+        "name": "Màn hình sao rơi",
+        "price": "30K",
+        "description": ""
+      },
+      {
+        "name": "Slideshow ảnh cưới",
+        "price": "50K",
+        "description": "Hình cô dâu & chú rể trình chiếu suốt tiệc."
+      },
+      {
+        "name": "Cắt / ghép nhạc",
+        "price": "50K",
+        "description": "Biên tập nhạc theo yêu cầu."
       }
-    ]
+    ],
+    "combo": {
+      "visible": true,
+      "name": "Combo trọn gói",
+      "description": "Bao gồm toàn bộ 5 dịch vụ",
+      "price": "250K"
+    },
+    "note": "💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%."
   },
   "order": {
     "title": "Bắt đầu\nlàm web cưới",
@@ -358,7 +321,7 @@
   },
   "footer": {
     "tagline": "Web cưới thiết kế riêng cho từng cặp đôi. Xem demo trước, ưng rồi mới chốt.",
-    "copyright": "© 2026 Dino Studio - Crafted with precision & love."
+    "copyright": "© 2026 Dino Wedding Service - Crafted with precision & love."
   },
   "contact": {
     "messengerUrl": "https://m.me/oitenecommentdao",

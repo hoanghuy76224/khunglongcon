@@ -70,12 +70,6 @@
     return html.replace(re, (m) => map[m.toLowerCase()] || m);
   }
 
-  const featureClass = {
-    normal: 'flex items-center gap-2',
-    strong: 'flex items-center gap-2 font-medium text-[#1A1613] dark:text-[#FAF8F5]',
-    gold: 'flex items-center gap-2 font-semibold text-[#AA8B56]',
-  };
-
   function render(template, c) {
     const { shell, blocks: b } = parse(template);
     const items = (c.templates.items || []).filter((t) => t.visible !== false);
@@ -139,17 +133,18 @@
       },
       pricing() {
         const p = c.pricing;
-        const plans = p.plans || [];
+        const list = p.items || [];
+        const combo = p.combo || {};
         return fill(b.pricing, {
-          title: esc(p.title), subtitle: esc(p.subtitle), note: esc(p.note),
-          gridClass: plans.length >= 3 ? 'md:grid-cols-3 max-w-6xl' : 'md:grid-cols-2 max-w-4xl',
-          plans: plans.map((pl, n) => fill(pl.featured ? b.planFeatured : b.plan, {
-            reveal: n % 2 ? 'reveal-right' : 'reveal-left',
-            name: esc(pl.name), tagline: esc(pl.tagline), price: esc(pl.price), unit: esc(pl.unit),
-            ctaLabel: esc(pl.ctaLabel), selectName: jsAttr(pl.selectName || pl.name),
-            badgeHtml: pl.badge ? fill(pl.featured ? b.badgeFeatured : b.badgeNormal, { badge: esc(pl.badge) }) : '',
-            features: (pl.features || []).map((f) => `<li class="${featureClass[f.style] || featureClass.normal}">✓ ${rich(f.text)}</li>`).join('\n                            '),
-          })).join('\n\n'),
+          eyebrow: esc(p.eyebrow), title: rich(p.title), note: esc(p.note),
+          items: list.map((i, n) => fill(b.menuItem, {
+            border: n ? 'border-t border-white/70' : '',
+            name: esc(i.name), price: esc(i.price),
+            descHtml: i.description ? `<p class="text-sm md:text-base text-white/85 leading-relaxed mt-2 max-w-md">${rich(i.description)}</p>` : '',
+          })).join('\n'),
+          combo: combo.visible === false || !combo.name ? '' : fill(b.menuCombo, {
+            name: esc(combo.name), description: esc(combo.description), price: esc(combo.price),
+          }),
         });
       },
       order() {
