@@ -194,6 +194,61 @@
         "url": "https://mau11.khunglongcon.com/",
         "darkPreview": true,
         "selectName": ""
+      },
+      {
+        "id": "diary",
+        "visible": true,
+        "tab": "Diary",
+        "title": "Template 11: Love Diary",
+        "badge": "Storybook",
+        "description": "Concept nhật ký 10 năm yêu nhau, mở thiệp là lật trang sách 3D, có RSVP và sổ lưu bút. Mẫu thật của Trang & Thống.",
+        "url": "https://trangthongwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 11: Love Diary (Trang - Thống)"
+      },
+      {
+        "id": "passport",
+        "visible": true,
+        "tab": "Passport",
+        "title": "Template 12: Wedding Passport",
+        "badge": "Travel Class",
+        "description": "Bìa hộ chiếu kèm vé máy bay, love story chia từng chặng, QR mừng cưới. Mẫu thật của Duy Đông & Quỳnh Như.",
+        "url": "https://dongnhuwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 12: Wedding Passport (Đông - Như)"
+      },
+      {
+        "id": "boarding",
+        "visible": true,
+        "tab": "Boarding",
+        "title": "Template 13: Boarding Pass",
+        "badge": "Travel Class",
+        "description": "Hộ chiếu hồng kiểu boarding pass, máy bay hạ cánh lúc mở thiệp, song ngữ Việt/Anh. Mẫu thật của Bella & Lance.",
+        "url": "https://bellaandlance.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 13: Boarding Pass (Bella - Lance)"
+      },
+      {
+        "id": "film",
+        "visible": true,
+        "tab": "Film",
+        "title": "Template 14: Pastel Film",
+        "badge": "Bespoke Class",
+        "description": "Phong cách thước phim tông pastel, song ngữ Việt/Anh, nhạc nền và trang quản lý khách. Mẫu thật của Huy Hoàng & Gia Như.",
+        "url": "https://hoangnhuwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 14: Pastel Film (Huy Hoàng - Gia Như)"
+      },
+      {
+        "id": "twosides",
+        "visible": true,
+        "tab": "Hai họ",
+        "title": "Template 15: Hai Họ",
+        "badge": "Bespoke Class",
+        "description": "Hai bản thiệp riêng cho nhà trai và nhà gái, tên khách hiện theo link, có trang quản lý xác nhận tham dự. Mẫu thật của Văn Quyết & Thu Nga.",
+        "url": "https://quyetngawedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 15: Hai Họ (Văn Quyết - Thu Nga)"
       }
     ]
   },
