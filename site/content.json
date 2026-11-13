@@ -84,6 +84,8 @@
   "templates": {
     "title": "Kho mẫu thiết kế",
     "subtitle": "Xem các mẫu web cưới ngay trong khung trình duyệt. Cuộn lướt trực tiếp để xem cấu trúc thật bên trong mỗi mẫu.",
+    "tabCards": "Thiệp online",
+    "tabVideos": "Video story",
     "items": [
       {
         "id": "diary",
@@ -250,7 +252,8 @@
         "darkPreview": false,
         "selectName": ""
       }
-    ]
+    ],
+    "videos": []
   },
   "services": {
     "title": "Tính năng đi kèm",

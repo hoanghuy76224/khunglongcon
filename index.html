@@ -60,6 +60,10 @@
         .reveal-left.active, .reveal-right.active {
             transform: translateX(0);
         }
+        .kind-btn { color: #5A524C; }
+        .dark .kind-btn { color: #A59E96; }
+        .kind-btn.kind-on { background: #1A1613; color: #FAF8F5; }
+        .dark .kind-btn.kind-on { background: #C5A880; color: #12100E; }
 
     </style>
 </head>
@@ -286,7 +290,8 @@
                 <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">Xem các mẫu web cưới ngay trong khung trình duyệt. Cuộn lướt trực tiếp để xem cấu trúc thật bên trong mỗi mẫu.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div id="panel-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
 <div class="bg-white dark:bg-[#1C1816] rounded-[24px] shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(26,22,19,0.15)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] border border-[#EAE5DC] dark:border-[#2A2420] overflow-hidden flex flex-col justify-between transition-all duration-500 transform hover:-translate-y-1 scroll-reveal">
                     <div>
@@ -809,6 +814,7 @@
                 </div>
 
             </div>
+
         </div>
     </section>
 
@@ -1100,14 +1106,29 @@
             });
         }
 
-        function selectTemplate(templateName) {
+        function switchTemplateKind(kind) {
+            document.querySelectorAll('.kind-btn').forEach((b) => b.classList.toggle('kind-on', b.dataset.kind === kind));
+            document.getElementById('panel-cards')?.classList.toggle('hidden', kind !== 'cards');
+            document.getElementById('panel-videos')?.classList.toggle('hidden', kind !== 'videos');
+            document.querySelectorAll('#panel-videos video').forEach((v) => v.pause());
+            document.querySelectorAll('#panel-videos .scroll-reveal').forEach((el) => el.classList.add('active'));
+        }
+
+        // Chỉ phát một video một lúc
+        document.addEventListener('play', (e) => {
+            if (e.target.tagName !== 'VIDEO' || !e.target.closest('#panel-videos')) return;
+            document.querySelectorAll('#panel-videos video').forEach((v) => { if (v !== e.target) v.pause(); });
+        }, true);
+
+        function selectTemplate(templateName, service) {
             const messageArea = document.getElementById('form-message');
             const serviceSelect = document.getElementById('form-service');
             if (!messageArea) return;
             
             messageArea.value = `Xin chào Dino Wedding Service, mình muốn đăng ký thiết kế theo: ${templateName}. Vui lòng tư vấn cho mình nhé!`;
             
-            if (serviceSelect && serviceSelect.querySelector('option[value="wedding"]')) serviceSelect.value = "wedding";
+            const svc = service || "wedding";
+            if (serviceSelect && serviceSelect.querySelector(`option[value="${svc}"]`)) serviceSelect.value = svc;
             
             document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
         }
