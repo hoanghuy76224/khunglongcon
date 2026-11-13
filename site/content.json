@@ -382,17 +382,6 @@
         "poster": "https://video.khunglongcon.com/bich-ngoc-quang-thien-intro.jpg",
         "vertical": false,
         "selectName": ""
-      },
-      {
-        "id": "hoang-nhu-intro",
-        "visible": true,
-        "title": "Huy Hoàng & Gia Như",
-        "badge": "Video dọc",
-        "description": "Video mời cưới dọc 9:16 tông màu nước, gửi qua Zalo và story.",
-        "url": "https://video.khunglongcon.com/hoang-nhu-intro.mp4",
-        "poster": "https://video.khunglongcon.com/hoang-nhu-intro.jpg",
-        "vertical": true,
-        "selectName": ""
       }
     ]
   },
