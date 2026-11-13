@@ -261,7 +261,140 @@
     "title": "Video Story",
     "subtitle": "Video love story làm riêng cho từng cặp đôi, chiếu màn cưới hoặc gửi kèm thiệp online.",
     "emptyText": "Video mẫu đang được cập nhật. Nhắn Dino để xem các video đã làm và nhận tư vấn kịch bản riêng cho hai bạn.",
-    "items": []
+    "items": [
+      {
+        "id": "trang-thong-love-story",
+        "visible": true,
+        "title": "Trang & Thống",
+        "badge": "Love Story",
+        "description": "Nhật ký 10 năm yêu nhau kể bằng hình ảnh, phong cách điện ảnh, chiếu màn cưới.",
+        "url": "https://video.khunglongcon.com/trang-thong-love-story.mp4",
+        "poster": "https://video.khunglongcon.com/trang-thong-love-story.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "quyet-thu-nga",
+        "visible": true,
+        "title": "Văn Quyết & Thu Nga",
+        "badge": "Love Story",
+        "description": "Hành trình 2019 đến 2026 qua những tấm ảnh polaroid, mộc mạc và ấm áp.",
+        "url": "https://video.khunglongcon.com/quyet-thu-nga.mp4",
+        "poster": "https://video.khunglongcon.com/quyet-thu-nga.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "love-story-duyen-no",
+        "visible": true,
+        "title": "Duyên Nợ",
+        "badge": "Cinematic",
+        "description": "Love story chia chương như một bộ phim ngắn, có tin nhắn, bản đồ và lời dẫn.",
+        "url": "https://video.khunglongcon.com/love-story-duyen-no.mp4",
+        "poster": "https://video.khunglongcon.com/love-story-duyen-no.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "full-story-hanh-trinh",
+        "visible": true,
+        "title": "Hành Trình Của Chúng Mình",
+        "badge": "Cinematic",
+        "description": "Cuộn phim kể chuyện theo từng năm, từ lần đầu gặp tới ngày về chung một nhà.",
+        "url": "https://video.khunglongcon.com/full-story-hanh-trinh.mp4",
+        "poster": "https://video.khunglongcon.com/full-story-hanh-trinh.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "ngoc-trong-anh-thu",
+        "visible": true,
+        "title": "Ngọc Trọng & Anh Thư",
+        "badge": "Cinematic",
+        "description": "Tông vàng ấm, mở đầu trong nhà thờ, kể lại những giai đoạn thật sự khó khăn.",
+        "url": "https://video.khunglongcon.com/ngoc-trong-anh-thu.mp4",
+        "poster": "https://video.khunglongcon.com/ngoc-trong-anh-thu.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "tuan-loan-loi-cam-on",
+        "visible": true,
+        "title": "Lời cảm ơn Tuấn & Loan",
+        "badge": "Lời cảm ơn",
+        "description": "Video lời cảm ơn gửi ba mẹ hai bên, chiếu trong tiệc cưới.",
+        "url": "https://video.khunglongcon.com/tuan-loan-loi-cam-on.mp4",
+        "poster": "https://video.khunglongcon.com/tuan-loan-loi-cam-on.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "khac-huan-thanh-thanh",
+        "visible": true,
+        "title": "Khắc Huấn & Thanh Thanh",
+        "badge": "Slide cưới",
+        "description": "Tông đỏ áo dài truyền thống, kể chuyện tình như thước phim cổ điển.",
+        "url": "https://video.khunglongcon.com/khac-huan-thanh-thanh.mp4",
+        "poster": "https://video.khunglongcon.com/khac-huan-thanh-thanh.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "hai-thach-hoang-my",
+        "visible": true,
+        "title": "Hải Thạch & Hoàng My",
+        "badge": "Save the Date",
+        "description": "Concept tem thư đỏ đô, ảnh cưới xen lời mời trang trọng.",
+        "url": "https://video.khunglongcon.com/hai-thach-hoang-my.mp4",
+        "poster": "https://video.khunglongcon.com/hai-thach-hoang-my.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "duy-tuong-bao-van",
+        "visible": true,
+        "title": "Duy Tường & Bảo Vân",
+        "badge": "Slide cưới",
+        "description": "Tông trắng tinh tế, ảnh cưới dạng photobooth, nhẹ nhàng thanh lịch.",
+        "url": "https://video.khunglongcon.com/duy-tuong-bao-van.mp4",
+        "poster": "https://video.khunglongcon.com/duy-tuong-bao-van.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "slide-cuoi-vi",
+        "visible": true,
+        "title": "To New Beginnings",
+        "badge": "Slide cưới",
+        "description": "Slide ảnh cưới trắng hồng, chữ viết tay, phù hợp chiếu chào khách.",
+        "url": "https://video.khunglongcon.com/slide-cuoi-vi.mp4",
+        "poster": "https://video.khunglongcon.com/slide-cuoi-vi.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "bich-ngoc-quang-thien-intro",
+        "visible": true,
+        "title": "Bích Ngọc & Quang Thiện",
+        "badge": "Intro",
+        "description": "Intro monogram lấp lánh 20 giây, mở màn trước khi vào tiệc.",
+        "url": "https://video.khunglongcon.com/bich-ngoc-quang-thien-intro.mp4",
+        "poster": "https://video.khunglongcon.com/bich-ngoc-quang-thien-intro.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
+        "id": "hoang-nhu-intro",
+        "visible": true,
+        "title": "Huy Hoàng & Gia Như",
+        "badge": "Video dọc",
+        "description": "Video mời cưới dọc 9:16 tông màu nước, gửi qua Zalo và story.",
+        "url": "https://video.khunglongcon.com/hoang-nhu-intro.mp4",
+        "poster": "https://video.khunglongcon.com/hoang-nhu-intro.jpg",
+        "vertical": true,
+        "selectName": ""
+      }
+    ]
   },
   "services": {
     "title": "Tính năng đi kèm",
