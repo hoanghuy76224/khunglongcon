@@ -86,70 +86,70 @@
     "subtitle": "Xem các mẫu web cưới ngay trong khung trình duyệt. Cuộn lướt trực tiếp để xem cấu trúc thật bên trong mỗi mẫu.",
     "items": [
       {
+        "id": "diary",
+        "visible": true,
+        "tab": "Diary",
+        "title": "Template 1: Love Diary",
+        "badge": "Storybook",
+        "description": "Concept nhật ký 10 năm yêu nhau, mở thiệp là lật trang sách 3D, có RSVP và sổ lưu bút. Mẫu thật của Trang & Thống.",
+        "url": "https://trangthongwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 1: Love Diary (Trang - Thống)"
+      },
+      {
+        "id": "passport",
+        "visible": true,
+        "tab": "Passport",
+        "title": "Template 2: Wedding Passport",
+        "badge": "Travel Class",
+        "description": "Bìa hộ chiếu kèm vé máy bay, love story chia từng chặng, QR mừng cưới. Mẫu thật của Duy Đông & Quỳnh Như.",
+        "url": "https://dongnhuwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 2: Wedding Passport (Đông - Như)"
+      },
+      {
+        "id": "boarding",
+        "visible": true,
+        "tab": "Boarding",
+        "title": "Template 3: Boarding Pass",
+        "badge": "Travel Class",
+        "description": "Hộ chiếu hồng kiểu boarding pass, máy bay hạ cánh lúc mở thiệp, song ngữ Việt/Anh. Mẫu thật của Bella & Lance.",
+        "url": "https://bellaandlance.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 3: Boarding Pass (Bella - Lance)"
+      },
+      {
         "id": "classic",
         "visible": true,
         "tab": "Classic",
-        "title": "Template 1: Cinematic",
+        "title": "Template 4: Cinematic",
         "badge": "Bespoke Class",
         "description": "Phong cách điện ảnh, tông nâu vàng ấm, kể chuyện như một bộ phim. Mẫu thật của Quang Huy & Ngọc Trinh.",
         "url": "https://huy-trinh.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 1: Cinematic (Quang Huy - Ngọc Trinh)"
+        "selectName": "Template 4: Cinematic (Quang Huy - Ngọc Trinh)"
       },
       {
-        "id": "modern",
+        "id": "film",
         "visible": true,
-        "tab": "Rose",
-        "title": "Template 2: Modern Rose",
+        "tab": "Film",
+        "title": "Template 5: Pastel Film",
         "badge": "Bespoke Class",
-        "description": "Tối giản đương đại, tông hồng cam champagne, hiệu ứng hoa rơi.",
-        "url": "https://mockup-04.netlify.app/",
+        "description": "Phong cách thước phim tông pastel, song ngữ Việt/Anh, nhạc nền và trang quản lý khách. Mẫu thật của Huy Hoàng & Gia Như.",
+        "url": "https://hoangnhuwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": ""
+        "selectName": "Template 5: Pastel Film (Huy Hoàng - Gia Như)"
       },
       {
-        "id": "duyenkhoi",
+        "id": "twosides",
         "visible": true,
-        "tab": "Pure",
-        "title": "Template 3: Pure Love",
+        "tab": "Hai họ",
+        "title": "Template 6: Hai Họ",
         "badge": "Bespoke Class",
-        "description": "Bố cục kiểu tạp chí, tôn ảnh cưới làm trung tâm.",
-        "url": "https://mockup-02.netlify.app/",
+        "description": "Hai bản thiệp riêng cho nhà trai và nhà gái, tên khách hiện theo link, có trang quản lý xác nhận tham dự. Mẫu thật của Văn Quyết & Thu Nga.",
+        "url": "https://quyetngawedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": ""
-      },
-      {
-        "id": "vinhket",
-        "visible": true,
-        "tab": "Eternal",
-        "title": "Template 4: Eternal Bond",
-        "badge": "Bespoke Class",
-        "description": "Tích hợp bản đồ và đồng hồ đếm ngược tới ngày cưới.",
-        "url": "https://mockup-02.pages.dev",
-        "darkPreview": false,
-        "selectName": ""
-      },
-      {
-        "id": "uyenuong",
-        "visible": true,
-        "tab": "Lovebirds",
-        "title": "Template 5: Lovebirds",
-        "badge": "Bespoke Class",
-        "description": "Tông màu nhẹ nhàng, bố cục mềm mại, sang trọng kín đáo.",
-        "url": "https://mau01.khunglongcon.com/",
-        "darkPreview": false,
-        "selectName": ""
-      },
-      {
-        "id": "baby",
-        "visible": true,
-        "tab": "Baby",
-        "title": "Template 6: Baby Diary",
-        "badge": "Bespoke Class",
-        "description": "Lưu lại hành trình chờ đón con, phong cách mộc mạc dịu nhẹ.",
-        "url": "https://welcome-dino.netlify.app/#dino",
-        "darkPreview": false,
-        "selectName": ""
+        "selectName": "Template 6: Hai Họ (Văn Quyết - Thu Nga)"
       },
       {
         "id": "vow",
@@ -163,21 +163,54 @@
         "selectName": ""
       },
       {
+        "id": "uyenuong",
+        "visible": true,
+        "tab": "Lovebirds",
+        "title": "Template 8: Lovebirds",
+        "badge": "Bespoke Class",
+        "description": "Tông màu nhẹ nhàng, bố cục mềm mại, sang trọng kín đáo.",
+        "url": "https://mau01.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "vinhket",
+        "visible": true,
+        "tab": "Eternal",
+        "title": "Template 9: Eternal Bond",
+        "badge": "Bespoke Class",
+        "description": "Tích hợp bản đồ và đồng hồ đếm ngược tới ngày cưới.",
+        "url": "https://mockup-02.pages.dev",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
+        "id": "modern",
+        "visible": true,
+        "tab": "Rose",
+        "title": "Template 10: Modern Rose",
+        "badge": "Bespoke Class",
+        "description": "Tối giản đương đại, tông hồng cam champagne, hiệu ứng hoa rơi.",
+        "url": "https://mockup-04.netlify.app/",
+        "darkPreview": false,
+        "selectName": ""
+      },
+      {
         "id": "brutal",
         "visible": true,
         "tab": "AURORA",
-        "title": "Template 8: AURORA ",
+        "title": "Template 11: AURORA ",
         "badge": "Avant-garde",
         "description": "Phong cách brutalist phá cách: chữ khổng lồ, đen trắng đỏ gắt, ảnh click hiện màu. Dành cho cặp đôi cá tính mạnh, muốn gây ấn tượng.",
         "url": "https://mau08.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 8: AURORA  (Brutalist)"
+        "selectName": "Template 11: AURORA  (Brutalist)"
       },
       {
         "id": "instagram",
         "visible": true,
         "tab": "Instagram",
-        "title": "Template 10: Instagram Love",
+        "title": "Template 12: Instagram Love",
         "badge": "Social Vibe",
         "description": "Phong cách Instagram hiện đại: grid ảnh, stories, hiệu ứng cuộn mượt mà. Dành cho cặp đôi yêu thích mạng xã hội và sự tinh tế.",
         "url": "https://mau10.khunglongcon.com/",
@@ -188,7 +221,7 @@
         "id": "tiktok",
         "visible": true,
         "tab": "TikTok",
-        "title": "Template 9: TikTok Love",
+        "title": "Template 13: TikTok Love",
         "badge": "Viral Style",
         "description": "Phong cách TikTok cuộn dọc: gate animation 3D, music player, hiệu ứng rung cảm. Dành cho cặp đôi trẻ, yêu thích sự sáng tạo.",
         "url": "https://mau11.khunglongcon.com/",
@@ -196,59 +229,26 @@
         "selectName": ""
       },
       {
-        "id": "diary",
-        "visible": true,
-        "tab": "Diary",
-        "title": "Template 11: Love Diary",
-        "badge": "Storybook",
-        "description": "Concept nhật ký 10 năm yêu nhau, mở thiệp là lật trang sách 3D, có RSVP và sổ lưu bút. Mẫu thật của Trang & Thống.",
-        "url": "https://trangthongwedding.khunglongcon.com/",
-        "darkPreview": false,
-        "selectName": "Template 11: Love Diary (Trang - Thống)"
-      },
-      {
-        "id": "passport",
-        "visible": true,
-        "tab": "Passport",
-        "title": "Template 12: Wedding Passport",
-        "badge": "Travel Class",
-        "description": "Bìa hộ chiếu kèm vé máy bay, love story chia từng chặng, QR mừng cưới. Mẫu thật của Duy Đông & Quỳnh Như.",
-        "url": "https://dongnhuwedding.khunglongcon.com/",
-        "darkPreview": false,
-        "selectName": "Template 12: Wedding Passport (Đông - Như)"
-      },
-      {
-        "id": "boarding",
-        "visible": true,
-        "tab": "Boarding",
-        "title": "Template 13: Boarding Pass",
-        "badge": "Travel Class",
-        "description": "Hộ chiếu hồng kiểu boarding pass, máy bay hạ cánh lúc mở thiệp, song ngữ Việt/Anh. Mẫu thật của Bella & Lance.",
-        "url": "https://bellaandlance.khunglongcon.com/",
-        "darkPreview": false,
-        "selectName": "Template 13: Boarding Pass (Bella - Lance)"
-      },
-      {
-        "id": "film",
-        "visible": true,
-        "tab": "Film",
-        "title": "Template 14: Pastel Film",
+        "id": "duyenkhoi",
+        "visible": false,
+        "tab": "Pure",
+        "title": "Template 3: Pure Love",
         "badge": "Bespoke Class",
-        "description": "Phong cách thước phim tông pastel, song ngữ Việt/Anh, nhạc nền và trang quản lý khách. Mẫu thật của Huy Hoàng & Gia Như.",
-        "url": "https://hoangnhuwedding.khunglongcon.com/",
+        "description": "Bố cục kiểu tạp chí, tôn ảnh cưới làm trung tâm.",
+        "url": "https://mockup-02.netlify.app/",
         "darkPreview": false,
-        "selectName": "Template 14: Pastel Film (Huy Hoàng - Gia Như)"
+        "selectName": ""
       },
       {
-        "id": "twosides",
-        "visible": true,
-        "tab": "Hai họ",
-        "title": "Template 15: Hai Họ",
+        "id": "baby",
+        "visible": false,
+        "tab": "Baby",
+        "title": "Template 6: Baby Diary",
         "badge": "Bespoke Class",
-        "description": "Hai bản thiệp riêng cho nhà trai và nhà gái, tên khách hiện theo link, có trang quản lý xác nhận tham dự. Mẫu thật của Văn Quyết & Thu Nga.",
-        "url": "https://quyetngawedding.khunglongcon.com/",
+        "description": "Lưu lại hành trình chờ đón con, phong cách mộc mạc dịu nhẹ.",
+        "url": "https://welcome-dino.netlify.app/#dino",
         "darkPreview": false,
-        "selectName": "Template 15: Hai Họ (Văn Quyết - Thu Nga)"
+        "selectName": ""
       }
     ]
   },
