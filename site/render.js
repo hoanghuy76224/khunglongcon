@@ -102,29 +102,34 @@
       },
       templates() {
         const t = c.templates;
-        const videos = (t.videos || []).filter((v) => v.visible !== false && /^https?:\/\//i.test(String(v.url || '').trim()));
         return fill(b.templates, {
           title: esc(t.title), subtitle: esc(t.subtitle),
-          kindTabs: videos.length ? fill(b.kindTabs, { tabCards: esc(t.tabCards || 'Thiệp online'), tabVideos: esc(t.tabVideos || 'Video story') }) : '',
-          videoPanel: videos.length ? fill(b.videoPanel, {
-            videos: videos.map((v) => {
-              const poster = /^https?:\/\//i.test(String(v.poster || '').trim()) ? safeUrl(v.poster) : '';
-              return fill(b.videoCard, {
-                aspect: v.vertical ? 'aspect-[9/16]' : 'aspect-video',
-                src: poster ? safeUrl(v.url) : safeUrl(String(v.url).trim().split('#')[0] + '#t=0.1'),
-                posterAttr: poster ? `poster="${poster}"` : '',
-                preload: poster ? 'none' : 'metadata',
-                badge: esc(v.badge), title: esc(v.title), description: esc(v.description),
-                selectName: jsAttr(v.selectName || ('Video: ' + v.title)),
-              });
-            }).join('\n\n'),
-          }) : '',
           cards: items.map((i) => fill(b.card, {
             id: esc(i.id), domain: domainOf(i.url), url: safeUrl(i.url),
             previewBg: i.darkPreview ? 'bg-black' : 'bg-white',
             badge: esc(i.badge), title: esc(i.title), description: esc(i.description),
             selectName: jsAttr(i.selectName || i.title),
           })).join('\n\n'),
+        });
+      },
+      videos() {
+        const v = c.videos || {};
+        const list = (v.items || []).filter((x) => x.visible !== false && /^https?:\/\//i.test(String(x.url || '').trim()));
+        return fill(b.videos, {
+          title: esc(v.title), subtitle: esc(v.subtitle),
+          body: list.length ? fill(b.videoGrid, {
+            videos: list.map((x) => {
+              const poster = /^https?:\/\//i.test(String(x.poster || '').trim()) ? safeUrl(x.poster) : '';
+              return fill(b.videoCard, {
+                aspect: x.vertical ? 'aspect-[9/16]' : 'aspect-video',
+                src: poster ? safeUrl(x.url) : safeUrl(String(x.url).trim().split('#')[0] + '#t=0.1'),
+                posterAttr: poster ? `poster="${poster}"` : '',
+                preload: poster ? 'none' : 'metadata',
+                badge: esc(x.badge), title: esc(x.title), description: esc(x.description),
+                selectName: jsAttr(x.selectName || ('Video: ' + x.title)),
+              });
+            }).join('\n\n'),
+          }) : fill(b.videoEmpty, { emptyText: esc(v.emptyText) }),
         });
       },
       services() {

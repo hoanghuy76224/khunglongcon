@@ -37,6 +37,11 @@
       "navLabel": "Kho mẫu"
     },
     {
+      "key": "videos",
+      "visible": true,
+      "navLabel": "Video Story"
+    },
+    {
       "key": "services",
       "visible": true,
       "navLabel": "Dịch vụ"
@@ -84,8 +89,6 @@
   "templates": {
     "title": "Kho mẫu thiết kế",
     "subtitle": "Xem các mẫu web cưới ngay trong khung trình duyệt. Cuộn lướt trực tiếp để xem cấu trúc thật bên trong mỗi mẫu.",
-    "tabCards": "Thiệp online",
-    "tabVideos": "Video story",
     "items": [
       {
         "id": "diary",
@@ -252,8 +255,13 @@
         "darkPreview": false,
         "selectName": ""
       }
-    ],
-    "videos": []
+    ]
+  },
+  "videos": {
+    "title": "Video Story",
+    "subtitle": "Video love story làm riêng cho từng cặp đôi, chiếu màn cưới hoặc gửi kèm thiệp online.",
+    "emptyText": "Video mẫu đang được cập nhật. Nhắn Dino để xem các video đã làm và nhận tư vấn kịch bản riêng cho hai bạn.",
+    "items": []
   },
   "services": {
     "title": "Tính năng đi kèm",

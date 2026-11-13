@@ -60,10 +60,6 @@
         .reveal-left.active, .reveal-right.active {
             transform: translateX(0);
         }
-        .kind-btn { color: #5A524C; }
-        .dark .kind-btn { color: #A59E96; }
-        .kind-btn.kind-on { background: #1A1613; color: #FAF8F5; }
-        .dark .kind-btn.kind-on { background: #C5A880; color: #12100E; }
 
     </style>
 </head>
@@ -208,18 +204,10 @@
             });
         }
 
-        function switchTemplateKind(kind) {
-            document.querySelectorAll('.kind-btn').forEach((b) => b.classList.toggle('kind-on', b.dataset.kind === kind));
-            document.getElementById('panel-cards')?.classList.toggle('hidden', kind !== 'cards');
-            document.getElementById('panel-videos')?.classList.toggle('hidden', kind !== 'videos');
-            document.querySelectorAll('#panel-videos video').forEach((v) => v.pause());
-            document.querySelectorAll('#panel-videos .scroll-reveal').forEach((el) => el.classList.add('active'));
-        }
-
         // Chỉ phát một video một lúc
         document.addEventListener('play', (e) => {
-            if (e.target.tagName !== 'VIDEO' || !e.target.closest('#panel-videos')) return;
-            document.querySelectorAll('#panel-videos video').forEach((v) => { if (v !== e.target) v.pause(); });
+            if (e.target.tagName !== 'VIDEO' || !e.target.closest('#videos')) return;
+            document.querySelectorAll('#videos video').forEach((v) => { if (v !== e.target) v.pause(); });
         }, true);
 
         function selectTemplate(templateName, service) {
@@ -481,13 +469,11 @@
                 <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">{{subtitle}}</p>
             </div>
 
-{{kindTabs}}
-            <div id="panel-cards" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
 {{cards}}
 
             </div>
-{{videoPanel}}
         </div>
     </section>
 <!--@end-->
@@ -588,19 +574,29 @@
         </div>
     </section>
 <!--@end-->
-<!--@block kindTabs-->
-            <div class="flex justify-center mb-12 -mt-8">
-                <div class="inline-flex bg-white dark:bg-[#12100E] border border-[#EAE5DC] dark:border-[#2A2420] rounded-full p-1 shadow-sm">
-                    <button type="button" data-kind="cards" onclick="switchTemplateKind('cards')" class="kind-btn kind-on px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold transition">{{tabCards}}</button>
-                    <button type="button" data-kind="videos" onclick="switchTemplateKind('videos')" class="kind-btn px-6 py-2.5 rounded-full text-xs uppercase tracking-[0.15em] font-semibold transition">{{tabVideos}}</button>
-                </div>
+<!--@block videos-->
+    <section id="videos" class="py-24 bg-white dark:bg-[#12100E] border-b border-[#EAE5DC] dark:border-[#2A2420] transition-colors duration-500">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center max-w-2xl mx-auto mb-20 space-y-4 scroll-reveal">
+                <h2 class="font-luxury-serif text-4xl md:text-5xl font-light text-[#1A1613] dark:text-[#FAF8F5]">{{title}}</h2>
+                <div class="w-12 h-[1px] bg-[#C5A880] mx-auto my-6"></div>
+                <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">{{subtitle}}</p>
             </div>
+{{body}}
+        </div>
+    </section>
 <!--@end-->
-<!--@block videoPanel-->
-            <div id="panel-videos" class="hidden grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+<!--@block videoGrid-->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
 {{videos}}
 
+            </div>
+<!--@end-->
+<!--@block videoEmpty-->
+            <div class="max-w-xl mx-auto text-center bg-[#FAF8F5] dark:bg-[#181513] border border-dashed border-[#C5A880]/50 rounded-2xl px-8 py-12 space-y-6 scroll-reveal">
+                <p class="text-sm text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed">{{emptyText}}</p>
+                <button onclick="selectTemplate('Video story', 'video')" class="bg-[#1A1613] dark:bg-[#C5A880] text-white dark:text-[#12100E] px-8 py-3 rounded-full text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#C5A880] dark:hover:bg-[#FAF8F5] hover:text-[#1A1613] transition-all duration-300">Đặt video</button>
             </div>
 <!--@end-->
 <!--@block videoCard-->

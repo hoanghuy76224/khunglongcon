@@ -193,7 +193,7 @@ const BRANCH = new URLSearchParams(location.search).get('branch') || 'main';
 const API = `https://api.github.com/repos/${OWNER}/${REPO}`;
 const TOKEN_KEY = 'dino_admin_token';
 const DEFAULT_THEME = { accent:'#C5A880', accentDeep:'#AA8B56', ink:'#1A1613', paper:'#FAF8F5', soft:'#F5F2EB', muted:'#5A524C', fontSerif:'Cormorant Garamond', fontSans:'Inter' };
-const SECTION_NAMES = { hero:'Phần mở đầu', about:'Câu chuyện', templates:'Kho mẫu', services:'Tính năng', process:'Quy trình', pricing:'Bảng giá', order:'Form đặt thiết kế' };
+const SECTION_NAMES = { hero:'Phần mở đầu', about:'Câu chuyện', templates:'Kho mẫu', videos:'Video Story', services:'Tính năng', process:'Quy trình', pricing:'Bảng giá', order:'Form đặt thiết kế' };
 
 const $ = (id) => document.getElementById(id);
 const store = {
@@ -318,9 +318,12 @@ const PANELS = {
         { key: 'selectName', label: 'Tên điền vào form khi khách chọn', help: 'Để trống thì dùng tên mẫu.' },
         { key: 'darkPreview', label: 'Khung xem trước nền đen', type: 'bool' },
       ] },
-    { path: 'templates.tabCards', label: 'Tên nút thiệp', help: 'Nút chuyển giữa thiệp và video, chỉ hiện khi có ít nhất một video.' },
-    { path: 'templates.tabVideos', label: 'Tên nút video' },
-    { path: 'templates.videos', label: 'Video story', type: 'list', hideable: true, addLabel: 'Thêm video', name: (v) => v.title || 'Video mới',
+  ]},
+  videos: { label: 'Video Story', anchor: 'videos', fields: [
+    { path: 'videos.title', label: 'Tiêu đề' },
+    { path: 'videos.subtitle', label: 'Mô tả', type: 'textarea' },
+    { path: 'videos.emptyText', label: 'Lời nhắn khi chưa có video', type: 'textarea' },
+    { path: 'videos.items', label: 'Các video', type: 'list', hideable: true, addLabel: 'Thêm video', name: (v) => v.title || 'Video mới',
       make: () => ({ id: 'video-' + Date.now().toString(36), visible: true, title: '', badge: 'Love Story', description: '', url: 'https://video.khunglongcon.com/', poster: '', vertical: false, selectName: '' }),
       fields: [
         { key: 'title', label: 'Tên video' },
@@ -556,7 +559,7 @@ function fitDesktop() {
 function validate() {
   const bad = (content.templates.items || []).find((t) => !t.title.trim() || !/^https?:\/\/.+\..+/.test(t.url));
   if (bad) return `Mẫu "${bad.title || 'chưa đặt tên'}" cần có tên và link demo đúng dạng https://...`;
-  const badVideo = (content.templates.videos || []).find((v) => v.visible !== false && (!String(v.title || '').trim() || !/^https?:\/\/.+\..+\/.+/.test(v.url)));
+  const badVideo = ((content.videos || {}).items || []).find((v) => v.visible !== false && (!String(v.title || '').trim() || !/^https?:\/\/.+\..+\/.+/.test(v.url)));
   if (badVideo) return `Video "${badVideo.title || 'chưa đặt tên'}" cần có tên và link file video đúng dạng https://video.khunglongcon.com/ten-file.mp4`;
   return '';
 }
