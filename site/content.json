@@ -263,6 +263,17 @@
     "emptyText": "Video mẫu đang được cập nhật. Nhắn Dino để xem các video đã làm và nhận tư vấn kịch bản riêng cho hai bạn.",
     "items": [
       {
+        "id": "my-linh-tran-tuan-netflix",
+        "visible": true,
+        "title": "Mỹ Linh & Trần Tuấn",
+        "badge": "Netflix",
+        "description": "Love story dựng phong cách Netflix, mở đầu bằng intro Tudum, kể chuyện qua từng chương như một bộ phim.",
+        "url": "https://video.khunglongcon.com/my-linh-tran-tuan-netflix.mp4",
+        "poster": "https://video.khunglongcon.com/my-linh-tran-tuan-netflix.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
         "id": "trang-thong-love-story",
         "visible": true,
         "title": "Trang & Thống",
