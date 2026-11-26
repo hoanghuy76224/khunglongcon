@@ -236,134 +236,134 @@
       {
         "id": "linhtuan",
         "visible": true,
-        "tab": "200 Mét",
-        "title": "Template 14: Hai Nhà 200 Mét",
+        "tab": "Next Door",
+        "title": "Template 14: Next Door Love",
         "badge": "Bespoke Class",
         "description": "Chủ đề hai nhà cách nhau 200 mét, hành trình chia 4 chặng, thẻ mừng cưới lật ra QR, album trượt, sổ lời chúc và quản lý khách mời. Mẫu thật của Mỹ Linh & Trần Tuấn.",
         "url": "https://linhtuanwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 14: Hai Nhà 200 Mét (Mỹ Linh - Trần Tuấn)"
+        "selectName": "Template 14: Next Door Love (Mỹ Linh - Trần Tuấn)"
       },
       {
         "id": "hainamdiep",
         "visible": true,
-        "tab": "Xanh lá",
-        "title": "Template 15: Xanh Lá Trang Nhã",
+        "tab": "Sage",
+        "title": "Template 15: Sage Garden",
         "badge": "Bespoke Class",
         "description": "Tông xanh lá dịu, trang trọng truyền thống, chạm để mở thiệp, xác nhận tham dự và đếm ngược. Mẫu thật của Hải Nam & Ngọc Diệp.",
         "url": "https://hainamngocdiepwedding.pages.dev/",
         "darkPreview": false,
-        "selectName": "Template 15: Xanh Lá Trang Nhã (Hải Nam - Ngọc Diệp)"
+        "selectName": "Template 15: Sage Garden (Hải Nam - Ngọc Diệp)"
       },
       {
         "id": "catloan",
         "visible": true,
-        "tab": "Phong bì",
-        "title": "Template 16: Phong Bì Hồng",
+        "tab": "Envelope",
+        "title": "Template 16: Blush Envelope",
         "badge": "Bespoke Class",
         "description": "Mở thiệp từ phong bì hồng dấu sáp, hai bản nhà trai và nhà gái, đếm ngược, album lật và nhạc nền. Mẫu thật của Gia Cát & Kiều Loan.",
         "url": "https://catloanwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 16: Phong Bì Hồng (Gia Cát - Kiều Loan)"
+        "selectName": "Template 16: Blush Envelope (Gia Cát - Kiều Loan)"
       },
       {
         "id": "baohuong",
         "visible": true,
-        "tab": "Điện ảnh",
-        "title": "Template 17: Phim Tình Yêu",
+        "tab": "Chapters",
+        "title": "Template 17: Cinematic Chapters",
         "badge": "Bespoke Class",
         "description": "Thiệp kiểu phim điện ảnh: video intro, mở bằng con dấu sáp, chia chương câu chuyện, album 35 ảnh, nhạc nền, RSVP và bao lì xì QR. Mẫu thật của Văn Bảo & Kim Hương.",
         "url": "https://baohuongwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 17: Phim Tình Yêu (Văn Bảo - Kim Hương)"
+        "selectName": "Template 17: Cinematic Chapters (Văn Bảo - Kim Hương)"
       },
       {
         "id": "trinhhoang",
         "visible": true,
-        "tab": "Vân tay",
-        "title": "Template 18: Nhịp Tim Vân Tay",
+        "tab": "Fingerprint",
+        "title": "Template 18: Fingerprint Love",
         "badge": "Bespoke Class",
         "description": "Mở thiệp bằng hai dấu vân tay hợp thành trái tim, tông pastel xanh nhẹ, đếm ngược, hai họ và lời ngỏ. Mẫu thật của Lê Trinh & Lê Hoàng.",
         "url": "https://trinhhoangwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 18: Nhịp Tim Vân Tay (Lê Trinh - Lê Hoàng)"
+        "selectName": "Template 18: Fingerprint Love (Lê Trinh - Lê Hoàng)"
       },
       {
         "id": "ngalam",
         "visible": true,
-        "tab": "Thi ca",
-        "title": "Template 19: Lời Thơ",
+        "tab": "Poem",
+        "title": "Template 19: Love Poem",
         "badge": "Bespoke Class",
         "description": "Mở đầu bằng thơ, save the date, thông tin hai nhà, nhạc nền và xác nhận tham dự. Mẫu thật của Mai Nga & Thanh Lâm.",
         "url": "https://lamngawedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 19: Lời Thơ (Mai Nga - Thanh Lâm)"
+        "selectName": "Template 19: Love Poem (Mai Nga - Thanh Lâm)"
       },
       {
         "id": "trungai",
         "visible": true,
-        "tab": "Mai mối",
-        "title": "Template 20: Lời Mai Mối",
+        "tab": "Destined",
+        "title": "Template 20: Destined Match",
         "badge": "Bespoke Class",
         "description": "Tông pastel xanh nhẹ, chạm để mở thiệp, câu chuyện từ một lời mai mối, đếm ngược và nhạc nền. Mẫu thật của Ngọc Ái & Thành Trung.",
         "url": "https://trungaiwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 20: Lời Mai Mối (Ngọc Ái - Thành Trung)"
+        "selectName": "Template 20: Destined Match (Ngọc Ái - Thành Trung)"
       },
       {
         "id": "handang",
         "visible": true,
-        "tab": "Mộc đỏ",
-        "title": "Template 21: Mộc Đỏ",
+        "tab": "Red Seal",
+        "title": "Template 21: Red Seal",
         "badge": "Bespoke Class",
         "description": "Bấm vào mộc đỏ để mở thiệp, bố cục trang trọng hai họ, nhạc nền. Mẫu thật của Hân & Đang.",
         "url": "https://handangwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 21: Mộc Đỏ (Hân - Đang)"
+        "selectName": "Template 21: Red Seal (Hân - Đang)"
       },
       {
         "id": "huyenanh",
         "visible": false,
-        "tab": "Hoa nổi",
-        "title": "Template 22: Hoa Dập Nổi",
+        "tab": "Bloom",
+        "title": "Template 22: White Bloom",
         "badge": "Bespoke Class",
         "description": "Chạm để mở thiệp, đếm ngược đến ngày vu quy, hoa dập nổi trắng, có xác nhận tham dự. Mẫu thật của Huyền Anh & Gia Trung.",
         "url": "https://huyenanhgiatrungwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 22: Hoa Dập Nổi (Huyền Anh - Gia Trung)"
+        "selectName": "Template 22: White Bloom (Huyền Anh - Gia Trung)"
       },
       {
         "id": "tiendung",
         "visible": false,
-        "tab": "Thư mời",
-        "title": "Template 23: Thư Mời Dấu Sáp",
+        "tab": "Wax Seal",
+        "title": "Template 23: Wax Seal Letter",
         "badge": "Bespoke Class",
         "description": "Thư mời cưới mở bằng con dấu sáp, bố cục hai nhà, có xác nhận tham dự. Mẫu thật của Tiến Dũng & Minh Trinh.",
         "url": "https://dungtrinhwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 23: Thư Mời Dấu Sáp (Tiến Dũng - Minh Trinh)"
+        "selectName": "Template 23: Wax Seal Letter (Tiến Dũng - Minh Trinh)"
       },
       {
         "id": "thaotrong",
         "visible": true,
-        "tab": "Cảnh mở đầu",
-        "title": "Template 24: Cảnh Mở Đầu",
+        "tab": "Movie",
+        "title": "Template 24: Movie Scene",
         "badge": "Bespoke Class",
         "description": "Phong cách phim, chạm con dấu để mở, cảnh mở đầu kiểu SCENE 01, bản đồ, nhạc nền và xác nhận tham dự. Mẫu thật của Như Thảo & Huỳnh Trọng.",
         "url": "https://thaotrongwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 24: Cảnh Mở Đầu (Như Thảo - Huỳnh Trọng)"
+        "selectName": "Template 24: Movie Scene (Như Thảo - Huỳnh Trọng)"
       },
       {
         "id": "duongson",
         "visible": false,
-        "tab": "Trích dẫn",
-        "title": "Template 25: Trích Dẫn Hôn Nhân",
+        "tab": "Ivory",
+        "title": "Template 25: Classic Ivory",
         "badge": "Bespoke Class",
         "description": "Chạm để mở thiệp, câu trích về hôn nhân ở bìa, thông tin hai họ, nhạc nền và xác nhận tham dự. Mẫu thật của Thuỳ Dương & Hồng Sơn.",
         "url": "https://duongsonwedding.khunglongcon.com/",
         "darkPreview": false,
-        "selectName": "Template 25: Trích Dẫn Hôn Nhân (Thuỳ Dương - Hồng Sơn)"
+        "selectName": "Template 25: Classic Ivory (Thuỳ Dương - Hồng Sơn)"
       },
       {
         "id": "duyenkhoi",
