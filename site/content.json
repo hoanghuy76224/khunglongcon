@@ -323,7 +323,7 @@
       },
       {
         "id": "huyenanh",
-        "visible": true,
+        "visible": false,
         "tab": "Vu quy",
         "title": "Template 22: Save The Date",
         "badge": "Bespoke Class",
@@ -334,7 +334,7 @@
       },
       {
         "id": "tiendung",
-        "visible": true,
+        "visible": false,
         "tab": "Thư mời",
         "title": "Template 23: Wax Seal Letter",
         "badge": "Bespoke Class",
@@ -356,7 +356,7 @@
       },
       {
         "id": "duongson",
-        "visible": true,
+        "visible": false,
         "tab": "Trích dẫn",
         "title": "Template 25: Quote Wedding",
         "badge": "Bespoke Class",
