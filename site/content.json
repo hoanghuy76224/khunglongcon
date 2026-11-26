@@ -234,6 +234,39 @@
         "selectName": ""
       },
       {
+        "id": "linhtuan",
+        "visible": true,
+        "tab": "200 mét",
+        "title": "Template 14: 200 Mét",
+        "badge": "Bespoke Class",
+        "description": "Chủ đề hai nhà cách nhau 200 mét, hành trình chia 4 chặng, thẻ mừng cưới lật ra QR, album trượt, sổ lời chúc và quản lý khách mời. Mẫu thật của Mỹ Linh & Trần Tuấn.",
+        "url": "https://linhtuanwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 14: 200 Mét (Mỹ Linh - Trần Tuấn)"
+      },
+      {
+        "id": "hainamdiep",
+        "visible": true,
+        "tab": "Xanh lá",
+        "title": "Template 15: Green Classic",
+        "badge": "Bespoke Class",
+        "description": "Tông xanh lá dịu, trang trọng truyền thống, chạm để mở thiệp, xác nhận tham dự và đếm ngược. Mẫu thật của Hải Nam & Ngọc Diệp.",
+        "url": "https://hainamngocdiepwedding.pages.dev/",
+        "darkPreview": false,
+        "selectName": "Template 15: Green Classic (Hải Nam - Ngọc Diệp)"
+      },
+      {
+        "id": "catloan",
+        "visible": true,
+        "tab": "Phong bì",
+        "title": "Template 16: Pink Envelope",
+        "badge": "Bespoke Class",
+        "description": "Mở thiệp từ phong bì hồng dấu sáp, hai bản nhà trai và nhà gái, đếm ngược, album lật và nhạc nền. Mẫu thật của Gia Cát & Kiều Loan.",
+        "url": "https://catloanwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 16: Pink Envelope (Gia Cát - Kiều Loan)"
+      },
+      {
         "id": "duyenkhoi",
         "visible": false,
         "tab": "Pure",
