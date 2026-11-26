@@ -267,6 +267,17 @@
         "selectName": "Template 16: Pink Envelope (Gia Cát - Kiều Loan)"
       },
       {
+        "id": "baohuong",
+        "visible": true,
+        "tab": "Cinematic Film",
+        "title": "Template 17: A Love Story",
+        "badge": "Bespoke Class",
+        "description": "Thiệp kiểu phim điện ảnh: video intro, mở bằng con dấu sáp, chia chương câu chuyện, album 35 ảnh, nhạc nền, RSVP và bao lì xì QR. Mẫu thật của Văn Bảo & Kim Hương.",
+        "url": "https://baohuongwedding.khunglongcon.com/",
+        "darkPreview": false,
+        "selectName": "Template 17: A Love Story (Văn Bảo - Kim Hương)"
+      },
+      {
         "id": "duyenkhoi",
         "visible": false,
         "tab": "Pure",
