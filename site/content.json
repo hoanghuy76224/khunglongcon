@@ -583,7 +583,7 @@
       },
       {
         "name": "Video cưới",
-        "price": "100K",
+        "price": "150K",
         "description": "Thiết kế theo yêu cầu. Kể câu chuyện tình yêu của hai bạn, từ ngày yêu đến ngày cưới."
       },
       {
@@ -593,7 +593,7 @@
       },
       {
         "name": "Slideshow ảnh cưới",
-        "price": "50K",
+        "price": "100K",
         "description": "Hình cô dâu & chú rể trình chiếu suốt tiệc."
       },
       {
@@ -606,7 +606,7 @@
       "visible": true,
       "name": "Combo trọn gói",
       "description": "Bao gồm toàn bộ 5 dịch vụ",
-      "price": "250K"
+      "price": "300K"
     },
     "note": "💡 QUY TẮC AN TOÀN: Không cần đặt cọc. Chỉ thanh toán sau khi web chạy ổn và bạn ưng ý 100%.",
     "subtitle": "Không rủi ro: thiết kế xong trước, ưng rồi mới thanh toán."
@@ -637,7 +637,7 @@
       },
       {
         "value": "video",
-        "label": "Video cưới (100K)"
+        "label": "Video cưới (150K)"
       },
       {
         "value": "saoroi",
@@ -645,7 +645,7 @@
       },
       {
         "value": "slideshow",
-        "label": "Slideshow ảnh cưới (50K)"
+        "label": "Slideshow ảnh cưới (100K)"
       },
       {
         "value": "nhac",
@@ -653,7 +653,7 @@
       },
       {
         "value": "combo",
-        "label": "Combo trọn gói (250K)"
+        "label": "Combo trọn gói (300K)"
       }
     ],
     "messageLabel": "Mẫu lựa chọn hoặc yêu cầu riêng",
