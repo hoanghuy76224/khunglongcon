@@ -395,6 +395,17 @@
     "emptyText": "Video mẫu đang được cập nhật. Nhắn Dino để xem các video đã làm và nhận tư vấn kịch bản riêng cho hai bạn.",
     "items": [
       {
+        "id": "thuy-my-huynh-thanh-lua-do",
+        "visible": true,
+        "title": "Thúy My & Huỳnh Thanh",
+        "badge": "Lụa đỏ",
+        "description": "Lụa đỏ – Điệp khúc",
+        "url": "https://khunglongcon.com/thuy-my-huynh-thanh/clip.m3u8",
+        "poster": "https://khunglongcon.com/thuy-my-huynh-thanh/poster.jpg",
+        "vertical": false,
+        "selectName": ""
+      },
+      {
         "id": "my-linh-tran-tuan-netflix",
         "visible": true,
         "title": "Mỹ Linh & Trần Tuấn",

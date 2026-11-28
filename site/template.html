@@ -342,6 +342,24 @@
             }
         }
     </script>
+<script>
+    const streams = document.querySelectorAll('video[src$=".m3u8"]');
+    const needsPlayer = Array.from(streams).filter(video => !video.canPlayType('application/vnd.apple.mpegurl'));
+    if (needsPlayer.length) {
+        const script = document.createElement('script');
+        script.src = '/thuy-my-huynh-thanh/hls.light.min.js';
+        script.onload = () => {
+            if (!Hls.isSupported()) return;
+            for (const video of needsPlayer) {
+                const url = video.getAttribute('src');
+                const player = new Hls({ maxBufferLength: 10 });
+                player.loadSource(url);
+                player.attachMedia(video);
+            }
+        };
+        document.body.append(script);
+    }
+    </script>
 </body>
 </html>
 <!--@block hero-->

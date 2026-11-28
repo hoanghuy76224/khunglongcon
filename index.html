@@ -1238,6 +1238,26 @@
                 <div class="bg-white dark:bg-[#12100E] border border-[#EAE5DC] dark:border-[#2A2420] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between scroll-reveal">
                     <div>
                         <div class="relative w-full aspect-video bg-black">
+                            <video class="absolute inset-0 w-full h-full object-contain bg-black" src="https://khunglongcon.com/thuy-my-huynh-thanh/clip.m3u8" poster="https://khunglongcon.com/thuy-my-huynh-thanh/poster.jpg" preload="none" controls playsinline controlslist="nodownload"></video>
+                        </div>
+                        <div class="p-6 space-y-2">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span class="bg-[#C5A880]/15 text-[#AA8B56] text-[9px] uppercase tracking-widest font-bold px-2.5 py-1 rounded">Lụa đỏ</span>
+                                <h3 class="font-luxury-serif text-lg font-medium text-[#1A1613] dark:text-[#FAF8F5]">Thúy My &amp; Huỳnh Thanh</h3>
+                            </div>
+                            <p class="text-xs text-[#5A524C] dark:text-[#A59E96] font-light leading-relaxed line-clamp-3">Lụa đỏ – Điệp khúc</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <button onclick="selectTemplate('Video: Thúy My &amp; Huỳnh Thanh', 'video')" class="w-full text-center bg-[#1A1613] dark:bg-[#C5A880] text-white dark:text-[#12100E] py-2 rounded-lg text-xs uppercase tracking-widest font-semibold hover:bg-[#AA8B56] dark:hover:bg-[#FAF8F5] transition duration-300">
+                            Chọn kiểu video này
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-[#12100E] border border-[#EAE5DC] dark:border-[#2A2420] rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between scroll-reveal">
+                    <div>
+                        <div class="relative w-full aspect-video bg-black">
                             <video class="absolute inset-0 w-full h-full object-contain bg-black" src="https://video.khunglongcon.com/my-linh-tran-tuan-netflix.mp4" poster="https://video.khunglongcon.com/my-linh-tran-tuan-netflix.jpg" preload="none" controls playsinline controlslist="nodownload"></video>
                         </div>
                         <div class="p-6 space-y-2">
@@ -1883,6 +1903,24 @@
                 moon.classList.add('hidden');
             }
         }
+    </script>
+<script>
+    const streams = document.querySelectorAll('video[src$=".m3u8"]');
+    const needsPlayer = Array.from(streams).filter(video => !video.canPlayType('application/vnd.apple.mpegurl'));
+    if (needsPlayer.length) {
+        const script = document.createElement('script');
+        script.src = '/thuy-my-huynh-thanh/hls.light.min.js';
+        script.onload = () => {
+            if (!Hls.isSupported()) return;
+            for (const video of needsPlayer) {
+                const url = video.getAttribute('src');
+                const player = new Hls({ maxBufferLength: 10 });
+                player.loadSource(url);
+                player.attachMedia(video);
+            }
+        };
+        document.body.append(script);
+    }
     </script>
 </body>
 </html>
